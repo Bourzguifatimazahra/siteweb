@@ -100,16 +100,23 @@ export function HomeHero() {
               {current.kicker}
             </span>
 
-            <h1 className="font-semibold leading-[1.02] tracking-tight text-[44px] sm:text-[64px] lg:text-[84px]">
+            <h1
+              className="font-semibold leading-[1.02] tracking-tight text-[44px] sm:text-[64px] lg:text-[84px]"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}
+            >
               <span className="block">{current.title[0]}</span>
               <span className="block" style={{ color: "#f18f01" }}>
                 {current.title[1]}
               </span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed">
+            <p
+              className="mt-6 text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto leading-relaxed"
+              style={{ textShadow: "0 1px 12px rgba(0,0,0,0.4)" }}
+            >
               {current.subtitle}
             </p>
+
 
             <div className="mt-10 flex flex-wrap gap-3 justify-center">
               <Link

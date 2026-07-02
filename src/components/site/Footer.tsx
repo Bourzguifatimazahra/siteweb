@@ -24,6 +24,7 @@ export function Footer() {
               ["/services", "Services"],
               ["/solutions", "Solutions"],
               ["/projets", "Projets"],
+              ["/blog", "Blog"],
               ["/contact", "Contact"],
             ].map(([to, label]) => (
               <li key={to}>
@@ -32,6 +33,7 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+
           </ul>
         </div>
 
@@ -57,8 +59,9 @@ export function Footer() {
           <h4 className="text-white text-[15px] font-semibold mb-5">Ressources</h4>
           <ul className="space-y-3 text-[14px]">
             <li><Link to="/politique-cookies" className="text-white/70 hover:text-white transition-colors">Politique de cookies</Link></li>
-            <li><a href="#" className="text-white/70 hover:text-white transition-colors">Mentions légales</a></li>
-            <li><a href="#" className="text-white/70 hover:text-white transition-colors">Politique de confidentialité</a></li>
+            <li><Link to="/mentions-legales" className="text-white/70 hover:text-white transition-colors">Mentions légales</Link></li>
+            <li><Link to="/politique-confidentialite" className="text-white/70 hover:text-white transition-colors">Politique de confidentialité</Link></li>
+            <li><Link to="/parametres-cookies" className="text-white/70 hover:text-white transition-colors">Paramétrer les cookies</Link></li>
           </ul>
           <div className="flex gap-3 mt-6">
             <a href="#" aria-label="LinkedIn" className="h-9 w-9 rounded-full bg-white/10 hover:bg-brand grid place-items-center transition-colors">
