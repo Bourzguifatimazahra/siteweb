@@ -125,7 +125,7 @@ function ArticlePage() {
         )}
 
         <div className="mt-10 space-y-5 text-[17px] leading-relaxed text-foreground/90">
-          {post.content.split("\n\n").map((para, i) => (
+          {post.content.split("\n\n").map((para: string, i: number) => (
             <p key={i}>{para}</p>
           ))}
         </div>
