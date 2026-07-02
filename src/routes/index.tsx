@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, ArrowUpRight, LineChart, Wrench, Cog, Factory, School, Hotel,
-  Building2, Tractor, HeartPulse, Sun, BatteryCharging, Sparkles,
+  Building2, Tractor, HeartPulse, Sun, BatteryCharging,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
-import heroImg from "@/assets/hero-solar.jpg";
+import { HomeHero } from "@/components/site/HomeHero";
 import projAgadir from "@/assets/project-agadir.jpg";
 import projCasa from "@/assets/project-casablanca.jpg";
 
@@ -79,58 +79,7 @@ const PROJECTS = [
 function HomePage() {
   return (
     <SiteLayout>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-radial-brand">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
-          <div className="absolute top-1/2 -left-20 h-72 w-72 rounded-full bg-[color:var(--sun)]/15 blur-3xl animate-float" />
-        </div>
-        <div className="container-eq pt-16 pb-24 lg:pt-24 lg:pb-32 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 animate-[fade-up_0.8s_ease-out]">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-primary-soft text-brand text-xs font-semibold px-4 py-2 mb-6">
-              <Sparkles className="h-3.5 w-3.5" />
-              Expert solaire & stockage · Maroc · Afrique
-            </span>
-            <h1 className="text-[42px] leading-[1.05] sm:text-[56px] lg:text-[72px] lg:leading-[1.02] font-semibold tracking-tight">
-              L'énergie de demain.
-              <span className="block text-brand">Aujourd'hui.</span>
-            </h1>
-            <p className="mt-6 text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              Nous concevons, finançons, installons et exploitons vos centrales solaires
-              et solutions de stockage — pour une énergie plus propre, plus fiable et plus rentable.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-primary hover:btn-primary-hover">
-                Lancez votre projet <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link to="/services" className="btn-outline hover:bg-primary-soft">
-                Découvrir nos services
-              </Link>
-            </div>
-          </div>
-          <div className="lg:col-span-5 animate-[scale-in_0.7s_ease-out]">
-            <div className="relative rounded-[28px] overflow-hidden shadow-elegant">
-              <img
-                src={heroImg}
-                alt="Centrale solaire au Maroc"
-                width={1920}
-                height={1280}
-                className="w-full h-[420px] lg:h-[520px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand/40 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 bg-background/90 backdrop-blur-md rounded-2xl p-4 flex items-center gap-4">
-                <div className="h-11 w-11 rounded-full bg-brand grid place-items-center text-white">
-                  <Sun className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Production annuelle moyenne</p>
-                  <p className="text-base font-semibold">+42 GWh d'énergie propre</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* STATS */}
       <section className="border-y border-border bg-secondary/60">
