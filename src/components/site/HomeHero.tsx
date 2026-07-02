@@ -41,7 +41,7 @@ export function HomeHero() {
   const current = SLIDES[index];
 
   return (
-    <section className="relative -mt-20 h-[100svh] min-h-[640px] w-full overflow-hidden text-white">
+    <section className="relative h-[calc(100svh-5rem)] min-h-[560px] w-full overflow-hidden text-white">
       {/* Background image switcher */}
       <AnimatePresence mode="sync">
         <motion.div
@@ -63,9 +63,10 @@ export function HomeHero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand/70 via-brand/55 to-brand/85" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,30,60,0.55)_100%)]" />
+      {/* Overlays — lighter, more luminous */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand/35 via-brand/25 to-brand/55" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08)_0%,_rgba(0,30,60,0.35)_100%)]" />
+
 
       {/* Decorative floating accent (color #f18f01 requested) */}
       <motion.div
