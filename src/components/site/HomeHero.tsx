@@ -41,7 +41,7 @@ export function HomeHero() {
   const current = SLIDES[index];
 
   return (
-    <section className="relative -mt-20 h-[100svh] min-h-[640px] w-full overflow-hidden text-white">
+    <section className="relative h-[calc(100svh-5rem)] min-h-[560px] w-full overflow-hidden text-white">
       {/* Background image switcher */}
       <AnimatePresence mode="sync">
         <motion.div
@@ -63,9 +63,10 @@ export function HomeHero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand/70 via-brand/55 to-brand/85" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,30,60,0.55)_100%)]" />
+      {/* Overlays — lighter, more luminous */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand/35 via-brand/25 to-brand/55" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08)_0%,_rgba(0,30,60,0.35)_100%)]" />
+
 
       {/* Decorative floating accent (color #f18f01 requested) */}
       <motion.div
@@ -99,16 +100,23 @@ export function HomeHero() {
               {current.kicker}
             </span>
 
-            <h1 className="font-semibold leading-[1.02] tracking-tight text-[44px] sm:text-[64px] lg:text-[84px]">
+            <h1
+              className="font-semibold leading-[1.02] tracking-tight text-[44px] sm:text-[64px] lg:text-[84px]"
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}
+            >
               <span className="block">{current.title[0]}</span>
               <span className="block" style={{ color: "#f18f01" }}>
                 {current.title[1]}
               </span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed">
+            <p
+              className="mt-6 text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto leading-relaxed"
+              style={{ textShadow: "0 1px 12px rgba(0,0,0,0.4)" }}
+            >
               {current.subtitle}
             </p>
+
 
             <div className="mt-10 flex flex-wrap gap-3 justify-center">
               <Link
