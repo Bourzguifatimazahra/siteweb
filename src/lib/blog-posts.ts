@@ -72,6 +72,44 @@ Le retour sur investissement d'une ombrière solaire est généralement compris 
 
 Chez Eqnovia, nous concevons des ombrières esthétiques, robustes, et parfaitement intégrées à l'architecture des sites logistiques et commerciaux.`,
   },
+  {
+    slug: "epc-cle-en-main-eqnovia",
+    title: "EPC clé en main : comment Eqnovia sécurise vos projets solaires",
+    excerpt:
+      "De l'étude au raccordement, découvrez la méthodologie EPC d'Eqnovia pour livrer des centrales performantes et bancables.",
+    date: "2026-03-05",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: hero1,
+    content: `Un projet solaire industriel n'est pas qu'une affaire de panneaux. C'est une chaîne d'ingénierie, d'achats, de construction et de mise en service où chaque maillon conditionne la performance finale. C'est la promesse d'un contrat EPC : Engineering, Procurement, Construction.
+
+Chez Eqnovia, la phase d'ingénierie démarre par un audit énergétique détaillé, une simulation PVsyst rigoureuse et une étude structurelle de la toiture ou du terrain. Nous produisons ensuite un dossier d'exécution complet : plans électriques, notes de calcul, spécifications matériels.
+
+Côté approvisionnement, nous sélectionnons exclusivement des modules Tier 1, des onduleurs certifiés IEC et des structures galvanisées à chaud. Chaque composant est tracé, testé et couvert par des garanties fabricant longue durée.
+
+La construction respecte les standards HSE les plus stricts, avec un chef de chantier dédié et un reporting hebdomadaire au client. La mise en service inclut tests de performance, remise du dossier technique et formation des équipes d'exploitation.
+
+Résultat : une centrale bancable, assurable, et prête pour 25 ans de production. C'est cette rigueur qui fait d'Eqnovia un partenaire de confiance pour les industriels et investisseurs au Maroc et en Afrique.`,
+  },
+  {
+    slug: "financement-ppa-solaire",
+    title: "PPA solaire : produire vert sans investissement initial",
+    excerpt:
+      "Le tiers-investissement (PPA) permet de bénéficier du solaire sans mobiliser de trésorerie. Comment ça marche ?",
+    date: "2026-02-18",
+    author: "Équipe Eqnovia",
+    readingTime: "4 min",
+    cover: projCasa,
+    content: `Le PPA, ou Power Purchase Agreement, est un contrat de vente d'électricité qui révolutionne l'accès au solaire pour les entreprises marocaines. Le principe est simple : Eqnovia finance, installe et exploite la centrale sur votre site, et vous achetez uniquement l'électricité produite, à un tarif inférieur à celui du réseau, sur une durée typique de 15 à 20 ans.
+
+Aucun investissement initial n'est requis. Aucun risque technique n'est porté par le client : Eqnovia et ses partenaires financiers assument la performance, la maintenance et les assurances. Vous ne payez que les kilowattheures consommés, avec une visibilité totale sur votre coût énergétique.
+
+Ce modèle est particulièrement adapté aux industriels, aux centres commerciaux, aux hôtels et aux exploitations agroalimentaires qui souhaitent réduire immédiatement leur facture sans impacter leur BFR ni leur capacité d'endettement.
+
+À l'issue du contrat, la centrale devient généralement propriété du client, offrant une électricité quasi gratuite pour une décennie supplémentaire. Le PPA est ainsi à la fois un outil de compétitivité et un levier de décarbonation, aligné avec les engagements RSE et les exigences des donneurs d'ordre internationaux.
+
+Eqnovia structure des PPA sur mesure, en partenariat avec des institutions financières marocaines et européennes, pour rendre le solaire accessible à toutes les entreprises.`,
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {
