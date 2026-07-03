@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { MessageCircle, X, Send, Sparkles } from "lucide-react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useLang } from "@/lib/i18n";
 
 const transport = new DefaultChatTransport({ api: "/api/chat" });
@@ -105,15 +107,18 @@ export function ChatWidget() {
               )}
               {messages.map((m) => {
                 const text = m.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
+                const isUser = m.role === "user";
                 return (
-                  <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div key={m.id} className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
                     <div
-                      className={`rounded-2xl px-4 py-2.5 text-sm max-w-[85%] whitespace-pre-wrap ${
-                        m.role === "user" ? "text-white" : "bg-background border border-border text-foreground"
+                      className={`rounded-2xl px-4 py-2.5 text-sm max-w-[85%] ${
+                        isUser
+                          ? "text-white whitespace-pre-wrap"
+                          : "bg-background border border-border text-foreground prose prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-0 prose-a:text-brand"
                       }`}
-                      style={m.role === "user" ? { backgroundColor: "#004c99" } : undefined}
+                      style={isUser ? { backgroundColor: "#004c99" } : undefined}
                     >
-                      {text}
+                      {isUser ? text : <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>}
                     </div>
                   </div>
                 );
