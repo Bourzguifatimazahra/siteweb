@@ -81,9 +81,27 @@ export function ChatWidget() {
 
             <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3 bg-secondary/40">
               {messages.length === 0 && (
-                <div className="rounded-2xl bg-background border border-border px-4 py-3 text-sm text-foreground max-w-[85%]">
-                  {t("chat.welcome")}
-                </div>
+                <>
+                  <div className="rounded-2xl bg-background border border-border px-4 py-3 text-sm text-foreground max-w-[85%]">
+                    {t("chat.welcome")}
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {[
+                      "Quels sont vos services ?",
+                      "Comment obtenir un devis ?",
+                      "Parlez-moi du stockage BESS",
+                      "Vos références au Maroc ?",
+                    ].map((q) => (
+                      <button
+                        key={q}
+                        onClick={() => sendMessage({ text: q })}
+                        className="text-xs rounded-full border border-border bg-background px-3 py-1.5 hover:border-brand hover:text-brand transition-colors"
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
+                </>
               )}
               {messages.map((m) => {
                 const text = m.parts.map((p) => (p.type === "text" ? p.text : "")).join("");

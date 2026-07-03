@@ -9,21 +9,21 @@ import hero3 from "@/assets/hero-3.jpg";
 const SLIDES = [
   {
     img: hero1,
-    kicker: "Solaire C&I",
+    kicker: "",
     title: ["L'énergie de demain.", "Aujourd'hui."],
     subtitle:
       "Eqnovia offre des solutions complètes pour la production et le stockage d'énergie propre.",
   },
   {
     img: hero2,
-    kicker: "Centrales solaires",
+    kicker: "",
     title: ["Le soleil du Maroc,", "au service de vos ambitions."],
     subtitle:
       "Nous concevons et exploitons vos centrales photovoltaïques pour une performance durable.",
   },
   {
     img: hero3,
-    kicker: "Stockage BESS",
+    kicker: "",
     title: ["Autonomie énergétique.", "Sécurité totale."],
     subtitle:
       "Nos systèmes de stockage garantissent la continuité et la résilience de votre alimentation.",
@@ -95,10 +95,12 @@ export function HomeHero() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-4 py-2 text-xs font-semibold tracking-wider uppercase mb-6">
-              <Sparkles className="h-3.5 w-3.5" style={{ color: "#f18f01" }} />
-              {current.kicker}
-            </span>
+            {current.kicker && (
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-4 py-2 text-xs font-semibold tracking-wider uppercase mb-6">
+                <Sparkles className="h-3.5 w-3.5" style={{ color: "#f18f01" }} />
+                {current.kicker}
+              </span>
+            )}
 
             <h1
               className="font-semibold leading-[1.02] tracking-tight text-[44px] sm:text-[64px] lg:text-[84px]"

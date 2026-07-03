@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type Lang = "fr" | "en" | "zh" | "ar";
+export type Lang = "fr" | "en" | "zh" | "ar" | "es";
 
 type Dict = Record<string, string>;
 
@@ -93,6 +93,28 @@ const DICT: Record<Lang, Dict> = {
     "blog.stop": "إيقاف",
     "cookies.settings": "إعدادات ملفات تعريف الارتباط",
   },
+  es: {
+    "nav.home": "Inicio",
+    "nav.about": "Quiénes somos",
+    "nav.services": "Servicios",
+    "nav.solutions": "Soluciones",
+    "nav.projects": "Proyectos",
+    "nav.blog": "Blog",
+    "nav.contact": "Contacto",
+    "cta.start": "Inicia tu proyecto",
+    "chat.title": "Asistente Eqnovia",
+    "chat.placeholder": "Haz una pregunta…",
+    "chat.welcome": "Hola 👋 Soy el asistente de Eqnovia. ¿En qué puedo ayudarte hoy?",
+    "wa.label": "Chatear por WhatsApp",
+    "lang.label": "Idioma",
+    "blog.title": "Blog y noticias",
+    "blog.subtitle": "Análisis, casos y novedades en energía solar y almacenamiento.",
+    "blog.read": "Leer artículo",
+    "blog.listen": "Escuchar",
+    "blog.pause": "Pausar",
+    "blog.stop": "Detener",
+    "cookies.settings": "Configuración de cookies",
+  },
 };
 
 const KEY = "eqnovia-lang";
@@ -105,7 +127,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? (window.localStorage.getItem(KEY) as Lang | null) : null;
-    if (stored && ["fr", "en", "zh", "ar"].includes(stored)) setLangState(stored);
+    if (stored && ["fr", "en", "zh", "ar", "es"].includes(stored)) setLangState(stored);
   }, []);
 
   useEffect(() => {

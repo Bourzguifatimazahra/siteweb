@@ -21,13 +21,11 @@ export function PageLoader() {
       aria-hidden={hidden}
     >
       <div className="flex flex-col items-center gap-6">
-        <div className="relative">
-          <div className="h-16 w-16 rounded-full border-2 border-primary-soft border-t-brand animate-[spin_1s_linear_infinite]" />
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="h-2.5 w-2.5 rounded-full bg-[color:var(--sun)]" />
-          </div>
+        <div className="relative h-28 w-28 grid place-items-center">
+          <div className="absolute inset-0 rounded-full border-2 border-primary-soft border-t-brand animate-[spin_1.2s_linear_infinite]" />
+          <img src={logo.url} alt="Eqnovia" className="h-14 w-auto animate-pulse" />
         </div>
-        <img src={logo.url} alt="Eqnovia" className="h-7 w-auto opacity-90" />
+        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">Eqnovia</p>
       </div>
     </div>
   );
