@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type Lang = "fr" | "en" | "zh" | "ar";
+export type Lang = "fr" | "en" | "zh" | "ar" | "es";
 
 type Dict = Record<string, string>;
 
