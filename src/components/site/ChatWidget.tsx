@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { MessageCircle, X, Send, Sparkles } from "lucide-react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useLang } from "@/lib/i18n";
 
 const transport = new DefaultChatTransport({ api: "/api/chat" });
