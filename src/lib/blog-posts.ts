@@ -113,6 +113,105 @@ Ce modèle est particulièrement adapté aux industriels, aux centres commerciau
 
 Eqnovia structure des PPA sur mesure, en partenariat avec des institutions financières marocaines et européennes, pour rendre le solaire accessible à toutes les entreprises.`,
   },
+  {
+    slug: "agrivoltaisme-maroc",
+    title: "Agrivoltaïsme : quand l'agriculture marocaine rencontre le solaire",
+    excerpt:
+      "Produire de l'électricité tout en protégeant les cultures : l'agrivoltaïsme s'impose comme une réponse au stress hydrique.",
+    date: "2026-01-28",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: hero2,
+    content: `L'agrivoltaïsme désigne l'association intelligente d'une production agricole et d'une production photovoltaïque sur une même parcelle. Au Maroc, où le stress hydrique s'accentue, cette approche prend une importance stratégique.
+
+Les panneaux surélevés créent une ombre partielle qui réduit l'évapotranspiration des cultures, parfois jusqu'à 30 pour cent. Résultat : moins d'irrigation nécessaire, des rendements agricoles préservés voire améliorés pour certaines cultures maraîchères, et une production d'électricité qui valorise le foncier.
+
+Les structures dynamiques modernes s'orientent automatiquement selon la course du soleil et les besoins des plantes. Un pilotage agronomique fin permet d'optimiser à la fois la lumière reçue par les cultures et l'énergie produite.
+
+Chez Eqnovia, nous concevons des projets pilotes en partenariat avec des exploitants agricoles et des instituts de recherche marocains. L'objectif : démontrer qu'énergie et agriculture peuvent prospérer ensemble, sans sacrifier ni l'une ni l'autre.
+
+L'agrivoltaïsme est plus qu'une innovation technique. C'est un modèle d'adaptation au changement climatique, une réponse concrète aux défis de souveraineté alimentaire et énergétique du continent africain.`,
+  },
+  {
+    slug: "hydrogene-vert-afrique",
+    title: "Hydrogène vert : l'Afrique, futur hub mondial ?",
+    excerpt:
+      "Le Maroc et ses voisins disposent d'atouts uniques pour devenir des leaders mondiaux de l'hydrogène décarboné.",
+    date: "2025-12-15",
+    author: "Équipe Eqnovia",
+    readingTime: "6 min",
+    cover: heroSolar,
+    content: `L'hydrogène vert, produit par électrolyse de l'eau à partir d'électricité renouvelable, s'impose comme le vecteur énergétique clé de la décarbonation industrielle. Sidérurgie, chimie, transport lourd, aviation : ces secteurs n'ont pas d'alternative crédible à long terme.
+
+Le Maroc dispose d'un potentiel exceptionnel : ensoleillement record, gisements éoliens de classe mondiale sur la façade atlantique, foncier disponible, et proximité géographique avec l'Europe consommatrice. La stratégie nationale hydrogène vise 4 gigawatts d'électrolyseurs à l'horizon 2030.
+
+Les premiers projets industriels émergent, portés par des consortiums internationaux. Ammoniac vert pour l'export, e-fuels pour l'aviation, alimentation d'industries locales : les débouchés se dessinent rapidement.
+
+Eqnovia se positionne sur les briques amont de la chaîne : centrales photovoltaïques et éoliennes dédiées, systèmes de stockage, infrastructures de raccordement. Nos équipes suivent activement les appels à projets et développent des partenariats avec les acteurs industriels et institutionnels.
+
+L'hydrogène vert ne remplacera pas l'électrification directe, plus efficace pour la plupart des usages. Mais pour les secteurs difficiles à décarboner, il constitue une opportunité historique pour l'Afrique de valoriser ses ressources renouvelables à l'échelle mondiale.`,
+  },
+  {
+    slug: "maintenance-o-et-m-solaire",
+    title: "O&M solaire : garantir 25 ans de performance",
+    excerpt:
+      "L'exploitation et la maintenance conditionnent la rentabilité réelle d'une centrale. Les bonnes pratiques Eqnovia.",
+    date: "2025-11-08",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: hero3,
+    content: `Une centrale solaire est conçue pour produire pendant 25 à 30 ans. Encore faut-il en assurer l'exploitation rigoureuse. L'O&M, pour Operation and Maintenance, est le pilier souvent sous-estimé qui distingue une centrale performante d'un actif décevant.
+
+La supervision à distance est la première ligne de défense. Nos centrales sont équipées de capteurs, d'onduleurs communicants et de compteurs qui remontent en temps réel les données de production. Notre centre de contrôle détecte immédiatement toute anomalie : baisse de rendement, panne d'onduleur, défaut de string.
+
+La maintenance préventive suit un calendrier strict : contrôles électriques annuels, thermographie infrarouge, vérification des serrages, inspection des structures. Le nettoyage des modules, essentiel au Maroc où la poussière peut réduire la production de 5 à 15 pour cent, est planifié selon la saison et le site.
+
+La maintenance corrective mobilise nos équipes techniques régionales, capables d'intervenir sous 24 à 48 heures partout au Maroc. Un stock de pièces stratégiques (onduleurs de rechange, connecteurs, câbles) garantit des délais de remise en service minimaux.
+
+Chez Eqnovia, nos contrats d'O&M incluent une garantie de performance : nous nous engageons sur un ratio de production annuel, avec compensation en cas de sous-performance. C'est cette exigence qui rassure les investisseurs et bancarise nos projets.`,
+  },
+  {
+    slug: "decarbonation-industrie-maroc",
+    title: "Décarboner l'industrie marocaine : par où commencer ?",
+    excerpt:
+      "Face aux exigences CBAM européennes, les industriels marocains doivent structurer leur trajectoire bas-carbone.",
+    date: "2025-10-20",
+    author: "Équipe Eqnovia",
+    readingTime: "6 min",
+    cover: projAgadir,
+    content: `Le mécanisme d'ajustement carbone aux frontières européen, ou CBAM, entre en application progressive depuis 2026. Concrètement, les exportateurs marocains d'acier, ciment, aluminium, engrais et électricité devront déclarer et payer les émissions carbone incorporées à leurs produits. La compétitivité de pans entiers de l'industrie nationale est en jeu.
+
+La bonne nouvelle : les leviers de décarbonation existent, et beaucoup sont rentables. La première étape consiste à mesurer précisément son empreinte carbone selon les standards ISO 14064 ou GHG Protocol. Sans mesure fiable, pas de stratégie crédible.
+
+Vient ensuite l'efficacité énergétique : isolation, récupération de chaleur, moteurs performants, éclairage LED, pilotage intelligent des utilités. Ces actions offrent souvent des retours sur investissement inférieurs à trois ans et réduisent immédiatement la facture énergétique.
+
+L'autoproduction solaire, éventuellement couplée à du stockage, constitue le deuxième pilier. Elle permet de substituer une électricité décarbonée à celle du réseau, en particulier pendant les heures diurnes qui coïncident souvent avec les pics de consommation industrielle.
+
+Enfin, l'électrification des procédés thermiques, l'utilisation de biomasse ou d'hydrogène vert pour la chaleur haute température, et l'optimisation logistique complètent la trajectoire.
+
+Eqnovia accompagne les industriels marocains dans cette démarche globale, de l'audit initial au déploiement des solutions, avec une lecture financière et carbone intégrée.`,
+  },
+  {
+    slug: "microgrids-electrification-rurale",
+    title: "Microgrids solaires : l'électrification des zones isolées",
+    excerpt:
+      "Comment les mini-réseaux photovoltaïques révolutionnent l'accès à l'électricité en Afrique subsaharienne.",
+    date: "2025-09-12",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: projCasa,
+    content: `Plus de 600 millions d'Africains n'ont toujours pas accès à une électricité fiable. Étendre les réseaux nationaux jusqu'aux villages les plus reculés coûte cher et prend du temps. Les microgrids solaires apportent une réponse rapide, économique et durable.
+
+Un microgrid combine une centrale photovoltaïque, un système de stockage par batteries, un système de gestion intelligent et un réseau de distribution local. Il peut alimenter un village, une école, un dispensaire, une unité de transformation agricole, ou un site industriel isolé.
+
+Les impacts sont considérables. L'éclairage prolonge la journée productive et scolaire. Le froid conserve médicaments et récoltes. La connectivité mobile devient possible. Les activités économiques se développent : moulins, ateliers, commerces, ateliers de couture.
+
+Techniquement, les microgrids modernes intègrent des protections avancées, des systèmes prépayés par mobile money, et une supervision à distance qui optimise la maintenance. La durée de vie utile dépasse 20 ans avec un renouvellement partiel des batteries à mi-parcours.
+
+Eqnovia développe des microgrids en partenariat avec des ONG, des collectivités et des opérateurs privés dans plusieurs pays africains. Chaque projet est co-construit avec les communautés bénéficiaires, gage d'appropriation et de pérennité.
+
+L'électrification rurale n'est pas qu'un enjeu technique. C'est un levier majeur de développement humain, d'émancipation et de résilience climatique pour les populations africaines.`,
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {
