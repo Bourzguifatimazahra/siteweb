@@ -12,6 +12,9 @@ export type BlogPost = {
 import projAgadir from "@/assets/project-agadir.jpg";
 import projCasa from "@/assets/project-casablanca.jpg";
 import hero1 from "@/assets/hero-1.jpg";
+import hero2 from "@/assets/hero-2.jpg";
+import hero3 from "@/assets/hero-3.jpg";
+import heroSolar from "@/assets/hero-solar.jpg";
 
 export const POSTS: BlogPost[] = [
   {
