@@ -82,7 +82,7 @@ function ArticlePage() {
         </Link>
 
         <div className="flex items-center gap-4 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString()}</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString("fr-FR")}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
           <span>· {post.author}</span>
         </div>
