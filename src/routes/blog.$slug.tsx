@@ -76,72 +76,168 @@ function ArticlePage() {
 
   return (
     <SiteLayout>
-      <article className="container-eq pt-12 pb-24 max-w-3xl">
-        <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-brand transition-colors mb-8">
-          <ArrowLeft className="h-4 w-4" /> Blog
-        </Link>
+      <motion.article
+        className="container-eq pt-12 pb-24 max-w-3xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-brand transition-colors mb-8 group">
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" /> Blog
+          </Link>
+        </motion.div>
 
-        <div className="flex items-center gap-4 text-xs text-muted-foreground">
+        <motion.div
+          className="flex items-center gap-4 text-xs text-muted-foreground"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+        >
           <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString("fr-FR")}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
           <span>· {post.author}</span>
-        </div>
+        </motion.div>
 
-        <h1 className="mt-4 text-[32px] lg:text-[48px] font-semibold leading-tight">{post.title}</h1>
-        <p className="mt-4 text-lg text-muted-foreground">{post.excerpt}</p>
+        <motion.h1
+          className="mt-4 text-[32px] lg:text-[48px] font-semibold leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.6 }}
+        >
+          {post.title}
+        </motion.h1>
+        <motion.p
+          className="mt-4 text-lg text-muted-foreground"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.6 }}
+        >
+          {post.excerpt}
+        </motion.p>
 
-        <div className="mt-8 rounded-2xl overflow-hidden">
-          <img src={post.cover} alt={post.title} className="w-full h-auto" />
-        </div>
+        <motion.div
+          className="mt-8 rounded-2xl overflow-hidden"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
+        >
+          <motion.img
+            src={post.cover}
+            alt={post.title}
+            className="w-full h-auto"
+            initial={{ scale: 1.08 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          />
+        </motion.div>
 
         {supported && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            whileHover={{ y: -2, boxShadow: "0 20px 40px -20px rgba(0,76,153,0.25)" }}
             className="mt-8 flex items-center gap-3 rounded-2xl border border-border bg-secondary/50 p-4"
           >
-            <div className="h-10 w-10 rounded-full grid place-items-center text-white shrink-0" style={{ backgroundColor: "#f18f01" }}>
+            <motion.div
+              className="h-10 w-10 rounded-full grid place-items-center text-white shrink-0"
+              style={{ backgroundColor: "#f18f01" }}
+              animate={state === "playing" ? { scale: [1, 1.1, 1] } : { scale: 1 }}
+              transition={state === "playing" ? { duration: 1.2, repeat: Infinity } : { duration: 0.3 }}
+            >
               <Volume2 className="h-5 w-5" />
-            </div>
+            </motion.div>
             <div className="flex-1 text-sm">
               <p className="font-semibold">{t("blog.listen")}</p>
-              <p className="text-muted-foreground text-xs">Text-to-Speech</p>
+              <p className="text-muted-foreground text-xs">
+                {state === "playing" ? "En lecture…" : state === "paused" ? "En pause" : "Text-to-Speech"}
+              </p>
             </div>
             <div className="flex gap-2">
               {state !== "playing" ? (
-                <button onClick={play} className="h-10 w-10 rounded-full text-white grid place-items-center hover:scale-105 transition-transform" style={{ backgroundColor: "#004c99" }} aria-label="Play">
+                <motion.button
+                  onClick={play}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="h-10 w-10 rounded-full text-white grid place-items-center"
+                  style={{ backgroundColor: "#004c99" }}
+                  aria-label="Play"
+                >
                   <Play className="h-4 w-4" />
-                </button>
+                </motion.button>
               ) : (
-                <button onClick={pause} className="h-10 w-10 rounded-full text-white grid place-items-center hover:scale-105 transition-transform" style={{ backgroundColor: "#004c99" }} aria-label="Pause">
+                <motion.button
+                  onClick={pause}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="h-10 w-10 rounded-full text-white grid place-items-center"
+                  style={{ backgroundColor: "#004c99" }}
+                  aria-label="Pause"
+                >
                   <Pause className="h-4 w-4" />
-                </button>
+                </motion.button>
               )}
-              <button onClick={stop} disabled={state === "idle"} className="h-10 w-10 rounded-full border border-border grid place-items-center disabled:opacity-40 hover:border-brand transition-colors" aria-label="Stop">
+              <motion.button
+                onClick={stop}
+                disabled={state === "idle"}
+                whileHover={state !== "idle" ? { scale: 1.1 } : {}}
+                whileTap={state !== "idle" ? { scale: 0.95 } : {}}
+                className="h-10 w-10 rounded-full border border-border grid place-items-center disabled:opacity-40 hover:border-brand transition-colors"
+                aria-label="Stop"
+              >
                 <Square className="h-4 w-4" />
-              </button>
+              </motion.button>
             </div>
           </motion.div>
         )}
 
         <div className="mt-10 space-y-5 text-[17px] leading-relaxed text-foreground/90">
           {post.content.split("\n\n").map((para: string, i: number) => (
-            <p key={i}>{para}</p>
+            <motion.p
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: Math.min(i * 0.05, 0.3) }}
+            >
+              {para}
+            </motion.p>
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border">
+        <motion.div
+          className="mt-16 pt-8 border-t border-border"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="text-sm text-muted-foreground mb-4">Autres articles</p>
           <div className="grid sm:grid-cols-2 gap-4">
-            {POSTS.filter((p) => p.slug !== post.slug).slice(0, 2).map((p) => (
-              <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="rounded-2xl border border-border p-5 hover:border-brand transition-colors">
-                <p className="font-semibold text-sm">{p.title}</p>
-                <p className="text-xs text-muted-foreground mt-1">{p.readingTime}</p>
-              </Link>
+            {POSTS.filter((p) => p.slug !== post.slug).slice(0, 2).map((p, i) => (
+              <motion.div
+                key={p.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                whileHover={{ y: -4 }}
+              >
+                <Link to="/blog/$slug" params={{ slug: p.slug }} className="block rounded-2xl border border-border p-5 hover:border-brand transition-colors h-full">
+                  <p className="font-semibold text-sm">{p.title}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{p.readingTime}</p>
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </article>
+        </motion.div>
+      </motion.article>
     </SiteLayout>
   );
 }
+
