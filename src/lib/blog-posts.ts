@@ -212,7 +212,59 @@ Eqnovia développe des microgrids en partenariat avec des ONG, des collectivité
 
 L'électrification rurale n'est pas qu'un enjeu technique. C'est un levier majeur de développement humain, d'émancipation et de résilience climatique pour les populations africaines.`,
   },
+  {
+    slug: "toitures-solaires-industrielles",
+    title: "Toitures solaires industrielles : maximiser chaque mètre carré",
+    excerpt:
+      "Comment transformer une toiture d'usine en actif énergétique performant sans compromettre l'étanchéité.",
+    date: "2025-08-18",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: hero2,
+    content: `Les toitures industrielles marocaines représentent des dizaines de millions de mètres carrés inexploités. Chaque mètre carré peut produire entre 180 et 220 kilowattheures par an, soit une ressource énergétique locale considérable, immédiatement mobilisable sans conflit d'usage du sol.
+
+Le préalable technique est structurel. Nos équipes réalisent systématiquement une note de calcul pour vérifier la capacité portante existante et proposer, si besoin, des renforcements ciblés. Les systèmes de fixation modernes, y compris les procédés sans perçage sur bacs acier, préservent l'étanchéité et les garanties du bâtiment.
+
+Le choix technologique se joue entre modules monofaciaux et bifaciaux, onduleurs de string ou centraux, structures inclinées ou intégrées. Chaque combinaison a ses avantages selon la géométrie de la toiture, l'orientation, et le profil de consommation du site.
+
+Chez Eqnovia, nous livrons des toitures solaires bancables, esthétiques et sûres, avec une garantie de performance sur 25 ans et une supervision temps réel intégrée au contrat.`,
+  },
+  {
+    slug: "irrigation-solaire-agriculture",
+    title: "Pompage solaire : irriguer sans dépendre du réseau",
+    excerpt:
+      "Le pompage photovoltaïque libère les exploitations agricoles marocaines du gasoil et des coupures.",
+    date: "2025-07-05",
+    author: "Équipe Eqnovia",
+    readingTime: "4 min",
+    cover: hero3,
+    content: `L'irrigation représente jusqu'à 80 pour cent de la consommation d'eau au Maroc, et une part importante des coûts énergétiques des exploitations agricoles. Le pompage solaire change radicalement l'équation économique et environnementale.
+
+Un système typique combine un champ photovoltaïque, un variateur de fréquence solaire et une pompe immergée. Aucune batterie n'est nécessaire lorsque l'eau est stockée dans un bassin de tête. L'énergie solaire disponible en journée coïncide parfaitement avec les besoins d'irrigation.
+
+Les gains sont immédiats. Élimination totale de la facture de gasoil ou d'électricité pour le pompage. Fin des ruptures d'approvisionnement liées aux coupures. Maintenance réduite grâce à l'absence de moteur thermique. Retour sur investissement souvent inférieur à quatre ans pour les exploitations de moyenne et grande taille.
+
+Eqnovia conçoit des solutions de pompage solaire adaptées aux forages profonds, aux réseaux collectifs et aux exploitations en goutte-à-goutte, avec un dimensionnement précis basé sur les besoins hydriques réels de chaque culture.`,
+  },
+  {
+    slug: "recyclage-panneaux-solaires",
+    title: "Recyclage des panneaux solaires : l'économie circulaire du photovoltaïque",
+    excerpt:
+      "Que deviennent les modules en fin de vie ? Panorama des filières de valorisation et enjeux pour le Maroc.",
+    date: "2025-06-02",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: heroSolar,
+    content: `Avec le boom du solaire mondial, la question de la fin de vie des panneaux photovoltaïques devient stratégique. Un module contient environ 76 pour cent de verre, 10 pour cent de plastique, 8 pour cent d'aluminium, 5 pour cent de silicium et des traces de métaux précieux. Tout est recyclable, à condition d'organiser la filière.
+
+En Europe, la directive DEEE impose déjà la reprise et le recyclage des modules par les fabricants. Les taux de valorisation dépassent 95 pour cent en masse. Les nouveaux procédés thermiques et chimiques permettent de récupérer le silicium avec une pureté suffisante pour refabriquer des cellules.
+
+Au Maroc, la filière reste embryonnaire mais s'organise. Les premiers volumes significatifs de panneaux en fin de vie n'arriveront qu'à partir de 2035, laissant le temps de structurer des unités de traitement compétitives. C'est une opportunité industrielle et un impératif environnemental.
+
+Eqnovia intègre la fin de vie dès la conception : traçabilité des composants, choix de fournisseurs engagés dans des programmes de reprise, et documentation complète remise au client pour anticiper la gestion future. Le solaire est propre à condition de le penser sur tout son cycle de vie.`,
+  },
 ];
+
 
 export function getPost(slug: string): BlogPost | undefined {
   return POSTS.find((p) => p.slug === slug);
