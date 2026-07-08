@@ -1,3 +1,7 @@
+export type LangCode = "fr" | "en" | "es" | "zh" | "ar";
+
+export type LocalizedText = { title: string; excerpt: string; content?: string };
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -7,7 +11,18 @@ export type BlogPost = {
   readingTime: string;
   cover: string;
   content: string;
+  i18n?: Partial<Record<Exclude<LangCode, "fr">, LocalizedText>>;
 };
+
+export function localizePost(post: BlogPost, lang: LangCode): { title: string; excerpt: string; content: string } {
+  if (lang === "fr") return { title: post.title, excerpt: post.excerpt, content: post.content };
+  const tr = post.i18n?.[lang];
+  return {
+    title: tr?.title ?? post.title,
+    excerpt: tr?.excerpt ?? post.excerpt,
+    content: tr?.content ?? post.content,
+  };
+}
 
 import projAgadir from "@/assets/project-agadir.jpg";
 import projCasa from "@/assets/project-casablanca.jpg";
