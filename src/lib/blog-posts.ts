@@ -16,7 +16,7 @@ export type BlogPost = {
 
 export function localizePost(post: BlogPost, lang: LangCode): { title: string; excerpt: string; content: string } {
   if (lang === "fr") return { title: post.title, excerpt: post.excerpt, content: post.content };
-  const tr = post.i18n?.[lang];
+  const tr = TRANSLATIONS[post.slug]?.[lang];
   return {
     title: tr?.title ?? post.title,
     excerpt: tr?.excerpt ?? post.excerpt,
