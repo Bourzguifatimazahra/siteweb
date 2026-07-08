@@ -31,7 +31,10 @@ function BlogPage() {
       </section>
 
       <section className="container-eq pb-24 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {POSTS.map((p, i) => (
+        {POSTS.map((p, i) => {
+          const loc = localizePost(p, lang);
+          const localeMap: Record<string, string> = { fr: "fr-FR", en: "en-US", es: "es-ES", zh: "zh-CN", ar: "ar-SA" };
+          return (
           <Reveal key={p.slug} delay={i * 100}>
             <motion.div
               whileHover={{ y: -6 }}
