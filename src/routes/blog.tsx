@@ -3,7 +3,7 @@ import { ArrowUpRight, Calendar, Clock, Volume2 } from "lucide-react";
 import { motion } from "motion/react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
-import { POSTS } from "@/lib/blog-posts";
+import { POSTS, localizePost } from "@/lib/blog-posts";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog")({
