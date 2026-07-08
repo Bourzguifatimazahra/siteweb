@@ -63,13 +63,13 @@ function BlogPage() {
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(p.date).toLocaleDateString("fr-FR")}</span>
+                    <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(p.date).toLocaleDateString(localeMap[lang] ?? "fr-FR")}</span>
                     <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{p.readingTime}</span>
                   </div>
                   <h2 className="mt-3 text-xl font-semibold leading-snug group-hover:text-brand transition-colors">
-                    {p.title}
+                    {loc.title}
                   </h2>
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{p.excerpt}</p>
+                  <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{loc.excerpt}</p>
                   <div className="mt-auto pt-5">
                     <span
                       className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm group-hover:gap-3 group-hover:shadow-md transition-all"
