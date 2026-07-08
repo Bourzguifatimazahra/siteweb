@@ -36,6 +36,7 @@ export const Route = createFileRoute("/blog/$slug")({
 function ArticlePage() {
   const { post } = Route.useLoaderData();
   const { t, lang } = useLang();
+  const loc = localizePost(post, lang);
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
   const [supported, setSupported] = useState(true);
   const uttRef = useRef<SpeechSynthesisUtterance | null>(null);
