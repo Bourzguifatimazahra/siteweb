@@ -99,7 +99,7 @@ function ArticlePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
-          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString({fr:"fr-FR",en:"en-US",es:"es-ES",zh:"zh-CN",ar:"ar-SA"}[lang] ?? "fr-FR")}</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString(({fr:"fr-FR",en:"en-US",es:"es-ES",zh:"zh-CN",ar:"ar-SA"} as Record<string,string>)[lang] ?? "fr-FR")}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
           <span>· {post.author}</span>
         </motion.div>
