@@ -230,7 +230,7 @@ function ArticlePage() {
                 whileHover={{ y: -4 }}
               >
                 <Link to="/blog/$slug" params={{ slug: p.slug }} className="block rounded-2xl border border-border p-5 hover:border-brand transition-colors h-full">
-                  <p className="font-semibold text-sm">{p.title}</p>
+                  <p className="font-semibold text-sm">{localizePost(p, lang).title}</p>
                   <p className="text-xs text-muted-foreground mt-1">{p.readingTime}</p>
                 </Link>
               </motion.div>
