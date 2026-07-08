@@ -56,8 +56,8 @@ function ArticlePage() {
       return;
     }
     window.speechSynthesis.cancel();
-    const utt = new SpeechSynthesisUtterance(`${post.title}. ${post.content}`);
-    const langMap: Record<string, string> = { fr: "fr-FR", en: "en-US", zh: "zh-CN", ar: "ar-SA" };
+    const utt = new SpeechSynthesisUtterance(`${loc.title}. ${loc.content}`);
+    const langMap: Record<string, string> = { fr: "fr-FR", en: "en-US", es: "es-ES", zh: "zh-CN", ar: "ar-SA" };
     utt.lang = langMap[lang] ?? "fr-FR";
     utt.rate = 1;
     utt.onend = () => setState("idle");
