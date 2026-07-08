@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Calendar, Clock, Play, Pause, Square, Volume2 } from "lucide-react";
 import { motion } from "motion/react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { getPost, POSTS } from "@/lib/blog-posts";
+import { getPost, POSTS, localizePost } from "@/lib/blog-posts";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -36,6 +36,7 @@ export const Route = createFileRoute("/blog/$slug")({
 function ArticlePage() {
   const { post } = Route.useLoaderData();
   const { t, lang } = useLang();
+  const loc = localizePost(post, lang);
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
   const [supported, setSupported] = useState(true);
   const uttRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -55,8 +56,8 @@ function ArticlePage() {
       return;
     }
     window.speechSynthesis.cancel();
-    const utt = new SpeechSynthesisUtterance(`${post.title}. ${post.content}`);
-    const langMap: Record<string, string> = { fr: "fr-FR", en: "en-US", zh: "zh-CN", ar: "ar-SA" };
+    const utt = new SpeechSynthesisUtterance(`${loc.title}. ${loc.content}`);
+    const langMap: Record<string, string> = { fr: "fr-FR", en: "en-US", es: "es-ES", zh: "zh-CN", ar: "ar-SA" };
     utt.lang = langMap[lang] ?? "fr-FR";
     utt.rate = 1;
     utt.onend = () => setState("idle");
@@ -98,7 +99,7 @@ function ArticlePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
-          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString("fr-FR")}</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString(({fr:"fr-FR",en:"en-US",es:"es-ES",zh:"zh-CN",ar:"ar-SA"} as Record<string,string>)[lang] ?? "fr-FR")}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
           <span>· {post.author}</span>
         </motion.div>
@@ -109,7 +110,7 @@ function ArticlePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.6 }}
         >
-          {post.title}
+          {loc.title}
         </motion.h1>
         <motion.p
           className="mt-4 text-lg text-muted-foreground"
@@ -117,7 +118,7 @@ function ArticlePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.6 }}
         >
-          {post.excerpt}
+          {loc.excerpt}
         </motion.p>
 
         <motion.div
@@ -128,7 +129,7 @@ function ArticlePage() {
         >
           <motion.img
             src={post.cover}
-            alt={post.title}
+            alt={loc.title}
             className="w-full h-auto"
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
@@ -197,7 +198,7 @@ function ArticlePage() {
         )}
 
         <div className="mt-10 space-y-5 text-[17px] leading-relaxed text-foreground/90">
-          {post.content.split("\n\n").map((para: string, i: number) => (
+          {loc.content.split("\n\n").map((para: string, i: number) => (
             <motion.p
               key={i}
               initial={{ opacity: 0, y: 16 }}
@@ -229,7 +230,7 @@ function ArticlePage() {
                 whileHover={{ y: -4 }}
               >
                 <Link to="/blog/$slug" params={{ slug: p.slug }} className="block rounded-2xl border border-border p-5 hover:border-brand transition-colors h-full">
-                  <p className="font-semibold text-sm">{p.title}</p>
+                  <p className="font-semibold text-sm">{localizePost(p, lang).title}</p>
                   <p className="text-xs text-muted-foreground mt-1">{p.readingTime}</p>
                 </Link>
               </motion.div>
