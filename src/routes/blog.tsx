@@ -17,7 +17,7 @@ export const Route = createFileRoute("/blog")({
 });
 
 function BlogPage() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <SiteLayout>
       <section className="container-eq pt-16 pb-8 lg:pt-24">
