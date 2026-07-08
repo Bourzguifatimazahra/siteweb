@@ -49,7 +49,7 @@ function BlogPage() {
                 <div className="relative overflow-hidden aspect-[16/10]">
                   <img
                     src={p.cover}
-                    alt={p.title}
+                    alt={loc.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
