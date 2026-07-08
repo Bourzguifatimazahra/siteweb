@@ -82,7 +82,8 @@ function BlogPage() {
               </Link>
             </motion.div>
           </Reveal>
-        ))}
+          );
+        })}
       </section>
     </SiteLayout>
   );
