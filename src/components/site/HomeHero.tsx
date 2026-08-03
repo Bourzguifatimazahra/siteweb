@@ -97,7 +97,7 @@ export function HomeHero() {
             )}
 
             <h1
-              className="font-semibold leading-[1.02] tracking-tight text-[44px] sm:text-[64px] lg:text-[84px]"
+              className="font-semibold leading-[1.02] tracking-tight text-[40px] sm:text-[56px] lg:text-[72px]"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}
             >
               <span className="block">{current.title[0]}</span>
@@ -107,7 +107,7 @@ export function HomeHero() {
             </h1>
 
             <p
-              className="mt-6 text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto leading-relaxed"
+              className="mt-6 text-base sm:text-base lg:text-lg text-white max-w-2xl mx-auto leading-relaxed"
               style={{ textShadow: "0 1px 12px rgba(0,0,0,0.4)" }}
             >
               {current.subtitle}

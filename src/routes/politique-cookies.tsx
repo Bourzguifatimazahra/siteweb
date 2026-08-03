@@ -49,7 +49,7 @@ function CookiesPage() {
       <section className="container-eq pt-16 pb-16 lg:pt-24 max-w-3xl">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Ressources</p>
-          <h1 className="text-[40px] lg:text-[56px] font-semibold leading-[1.05]">
+          <h1 className="text-[36px] lg:text-[48px] font-semibold leading-[1.05]">
             Politique de cookies
           </h1>
           <p className="mt-6 text-muted-foreground">Dernière mise à jour : {new Date().toLocaleDateString("fr-FR", { year: "numeric", month: "long", day: "numeric" })}</p>
@@ -60,7 +60,7 @@ function CookiesPage() {
         {SECTIONS.map((s, i) => (
           <Reveal key={s.title} delay={i * 60}>
             <article className="border-t border-border pt-6">
-              <h2 className="text-2xl font-semibold text-brand">{s.title}</h2>
+              <h2 className="text-xl font-semibold text-brand">{s.title}</h2>
               <p className="mt-3 text-foreground/85 leading-relaxed">{s.body}</p>
             </article>
           </Reveal>

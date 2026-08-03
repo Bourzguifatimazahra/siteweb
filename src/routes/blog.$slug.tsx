@@ -105,7 +105,7 @@ function ArticlePage() {
         </motion.div>
 
         <motion.h1
-          className="mt-4 text-[32px] lg:text-[48px] font-semibold leading-tight"
+          className="mt-4 text-[28px] lg:text-[44px] font-semibold leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.6 }}
@@ -113,7 +113,7 @@ function ArticlePage() {
           {loc.title}
         </motion.h1>
         <motion.p
-          className="mt-4 text-lg text-muted-foreground"
+          className="mt-4 text-base text-muted-foreground"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.6 }}
@@ -197,7 +197,7 @@ function ArticlePage() {
           </motion.div>
         )}
 
-        <div className="mt-10 space-y-5 text-[17px] leading-relaxed text-foreground/90">
+        <div className="mt-10 space-y-5 text-[15px] leading-relaxed text-foreground/90">
           {loc.content.split("\n\n").map((para: string, i: number) => (
             <motion.p
               key={i}

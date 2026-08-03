@@ -23,10 +23,10 @@ function BlogPage() {
       <section className="container-eq pt-16 pb-8 lg:pt-24">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Blog</p>
-          <h1 className="text-[40px] lg:text-[64px] font-semibold leading-[1.05] max-w-3xl">
+          <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
             {t("blog.title")}
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">{t("blog.subtitle")}</p>
+          <p className="mt-6 text-base text-muted-foreground max-w-2xl">{t("blog.subtitle")}</p>
         </Reveal>
       </section>
 
