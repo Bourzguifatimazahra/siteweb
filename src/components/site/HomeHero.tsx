@@ -3,27 +3,22 @@ import { AnimatePresence, motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const SLIDES = [
   {
-    img: hero1,
     kicker: "",
     title: ["L'énergie de demain.", "Aujourd'hui."],
     subtitle:
       "Eqnovia offre des solutions complètes pour la production et le stockage d'énergie propre.",
   },
   {
-    img: hero2,
     kicker: "",
     title: ["Le soleil du Maroc,", "au service de vos ambitions."],
     subtitle:
       "Nous concevons et exploitons vos centrales photovoltaïques pour une performance durable.",
   },
   {
-    img: hero3,
     kicker: "",
     title: ["Autonomie énergétique.", "Sécurité totale."],
     subtitle:
