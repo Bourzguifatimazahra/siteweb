@@ -27,10 +27,10 @@ function ContactPage() {
       <section className="container-eq pt-16 pb-16 lg:pt-24">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Contact</p>
-          <h1 className="text-[40px] lg:text-[64px] font-semibold leading-[1.05] max-w-3xl">
+          <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
             Discutons de votre projet.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-base text-muted-foreground max-w-2xl">
             Notre équipe revient vers vous sous 48h avec une première évaluation.
           </p>
         </Reveal>
@@ -40,7 +40,7 @@ function ContactPage() {
         <Reveal className="lg:col-span-2">
           <div className="rounded-3xl bg-brand text-white p-10 h-full flex flex-col gap-8">
             <div>
-              <h2 className="text-2xl font-semibold">Nos coordonnées</h2>
+              <h2 className="text-xl font-semibold">Nos coordonnées</h2>
               <p className="mt-2 text-white/75 text-sm">Nous sommes à votre écoute du lundi au vendredi, 9h-18h.</p>
             </div>
 
@@ -64,7 +64,7 @@ function ContactPage() {
                 <div className="h-16 w-16 rounded-full bg-primary-soft grid place-items-center text-brand mx-auto">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h2 className="mt-6 text-2xl font-semibold">Message envoyé !</h2>
+                <h2 className="mt-6 text-xl font-semibold">Message envoyé !</h2>
                 <p className="mt-3 text-muted-foreground">Nous vous répondrons dans les 48h.</p>
               </div>
             ) : (
@@ -84,7 +84,7 @@ function ContactPage() {
                     name="message"
                     required
                     rows={5}
-                    className="w-full rounded-2xl border border-border bg-background px-5 py-3 text-[15px] focus:outline-none focus:border-brand focus:ring-4 focus:ring-primary-soft transition-all"
+                    className="w-full rounded-2xl border border-border bg-background px-5 py-3 text-[14px] focus:outline-none focus:border-brand focus:ring-4 focus:ring-primary-soft transition-all"
                     placeholder="Décrivez votre projet, site, consommation…"
                   />
                 </div>
@@ -111,7 +111,7 @@ function Field({ label, name, type = "text", required = false }: { label: string
         name={name}
         type={type}
         required={required}
-        className="w-full rounded-2xl border border-border bg-background px-5 py-3 text-[15px] focus:outline-none focus:border-brand focus:ring-4 focus:ring-primary-soft transition-all"
+        className="w-full rounded-2xl border border-border bg-background px-5 py-3 text-[14px] focus:outline-none focus:border-brand focus:ring-4 focus:ring-primary-soft transition-all"
       />
     </div>
   );
