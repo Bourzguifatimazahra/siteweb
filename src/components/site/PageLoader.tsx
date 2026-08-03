@@ -6,8 +6,9 @@ export function PageLoader() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setHidden(true), 900);
-    const t2 = setTimeout(() => setGone(true), 1500);
+    // Le loader ne dépasse jamais 3 s au total
+    const t1 = setTimeout(() => setHidden(true), 2400);
+    const t2 = setTimeout(() => setGone(true), 3000);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
