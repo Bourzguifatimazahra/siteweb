@@ -40,10 +40,10 @@ function ServicesPage() {
       <section className="container-eq pt-16 pb-12 lg:pt-24">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Nos services</p>
-          <h1 className="text-[40px] lg:text-[64px] font-semibold leading-[1.05] max-w-3xl">
+          <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
             Une offre complète, de l'idée à l'exploitation.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-base text-muted-foreground max-w-2xl">
             Trois piliers de services, une même exigence : livrer des centrales solaires performantes,
             fiables et rentables sur le long terme.
           </p>
@@ -58,7 +58,7 @@ function ServicesPage() {
                 <div className="h-16 w-16 rounded-2xl bg-brand text-white grid place-items-center">
                   <s.icon className="h-7 w-7" />
                 </div>
-                <h2 className="mt-6 text-[32px] font-semibold leading-tight">{s.title}</h2>
+                <h2 className="mt-6 text-[28px] font-semibold leading-tight">{s.title}</h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
               <ul className="lg:col-span-8 grid sm:grid-cols-2 gap-4 content-start">
@@ -77,7 +77,7 @@ function ServicesPage() {
       <section className="container-eq pb-24">
         <div className="rounded-[32px] bg-brand text-white p-10 lg:p-16 text-center relative overflow-hidden">
           <div className="absolute top-8 right-10 h-6 w-6 rounded-full bg-[color:var(--sun)] animate-float" />
-          <h2 className="text-[32px] lg:text-[44px] font-semibold max-w-2xl mx-auto">Un projet en tête ? Parlons-en.</h2>
+          <h2 className="text-[28px] lg:text-[40px] font-semibold max-w-2xl mx-auto">Un projet en tête ? Parlons-en.</h2>
           <p className="mt-4 text-white/80 max-w-lg mx-auto">Notre équipe revient vers vous sous 48h avec une première évaluation.</p>
           <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-white text-brand font-semibold px-8 py-4 rounded-full hover:bg-white/90 transition-colors">
             Demander une étude <ArrowRight className="h-4 w-4" />
