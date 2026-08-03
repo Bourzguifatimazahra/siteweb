@@ -33,6 +33,63 @@ import heroSolar from "@/assets/hero-solar.jpg";
 
 export const POSTS: BlogPost[] = [
   {
+    slug: "ombrieres-photovoltaiques-parking",
+    title: "Ombrières photovoltaïques : transformer un parking en centrale",
+    excerpt:
+      "Confort pour les collaborateurs, production d'électricité verte et image de marque : l'ombrière cumule les bénéfices.",
+    date: "2026-07-28",
+    author: "Équipe Eqnovia",
+    readingTime: "5 min",
+    cover: projCasa,
+    content: `Un parking d'entreprise est une surface disponible, dégagée et parfaitement orientée. L'installer en ombrières photovoltaïques permet de produire de l'électricité sans mobiliser un mètre carré supplémentaire de foncier.
+
+Sur nos réalisations récentes, une ombrière de 300 places couvre environ 600 kilowatts-crête, soit près d'un million de kilowattheures par an. Cette production alimente en priorité les bâtiments adjacents et, le cas échéant, des bornes de recharge pour véhicules électriques.
+
+Les bénéfices sont immédiats : véhicules protégés de la chaleur et des intempéries, confort thermique du personnel, et signal fort envoyé aux clients comme aux investisseurs sur l'engagement environnemental du site.
+
+Techniquement, la structure est dimensionnée selon les charges de vent et de neige locales, avec des fondations adaptées à la nature du sol. L'étude structurelle et l'étude de production sont réalisées en amont par nos ingénieurs, avant validation du dossier de raccordement.
+
+Chez Eqnovia, l'ombrière est livrée clé en main : conception, génie civil, structure, modules, onduleurs, raccordement, mise en service et maintenance. Une étude gratuite permet de chiffrer précisément le potentiel de votre parking.`,
+  },
+  {
+    slug: "data-centers-energie-verte",
+    title: "Data centers : alimenter le numérique en énergie verte",
+    excerpt:
+      "La croissance du cloud africain impose une électricité fiable et décarbonée. Solaire et stockage entrent en jeu.",
+    date: "2026-07-15",
+    author: "Équipe Eqnovia",
+    readingTime: "6 min",
+    cover: heroSolar,
+    content: `Les data centers sont parmi les consommateurs d'électricité les plus intensifs et les plus exigeants en continuité de service. Au Maroc et en Afrique, leur développement rapide pose une double question : coût de l'énergie et empreinte carbone.
+
+Le solaire photovoltaïque, couplé à un système de stockage par batteries, répond aux deux. La production diurne couvre une part significative de la charge de base, tandis que le BESS lisse les pointes et sécurise les transitions en cas de coupure réseau.
+
+Nos architectures associent centrale photovoltaïque, stockage, groupes de secours et supervision énergétique unifiée. L'objectif est de réduire le coût moyen du kilowattheure tout en maintenant une disponibilité maximale.
+
+L'argument commercial est également déterminant : les grands clients du cloud exigent désormais des garanties d'origine renouvelable pour leurs propres bilans carbone. Un data center alimenté en solaire devient donc plus compétitif à l'appel d'offres.
+
+Eqnovia réalise l'audit de charge, la modélisation de production et le dimensionnement du stockage, puis assure l'exploitation et la maintenance sur la durée.`,
+  },
+  {
+    slug: "financement-vert-projets-solaires",
+    title: "Financement vert : quelles solutions pour votre projet solaire ?",
+    excerpt:
+      "Autofinancement, leasing, PPA ou lignes de crédit vertes : comment choisir le montage le plus rentable.",
+    date: "2026-07-02",
+    author: "Équipe Eqnovia",
+    readingTime: "7 min",
+    cover: hero2,
+    content: `Le premier frein évoqué par les industriels n'est pas la technologie, mais le financement. Bonne nouvelle : les montages disponibles se sont considérablement diversifiés.
+
+L'autofinancement reste le plus rentable sur la durée : l'entreprise capte l'intégralité des économies et valorise l'actif à son bilan. Le retour sur investissement se situe généralement entre quatre et six ans, pour une durée de vie utile supérieure à vingt-cinq ans.
+
+La location longue durée, ou leasing, permet de lisser l'effort financier en charges d'exploitation, sans immobilisation initiale. Le contrat d'achat d'électricité, ou PPA, va plus loin : Eqnovia finance, installe et exploite la centrale, et vous achetez uniquement les kilowattheures produits, à un tarif inférieur au réseau et contractuellement stable.
+
+À cela s'ajoutent les lignes de crédit vertes portées par les bailleurs internationaux et les banques marocaines, souvent assorties de conditions préférentielles et de subventions à l'étude technique.
+
+Notre équipe compare pour vous les scénarios sur la base de votre profil de consommation, de votre capacité d'endettement et de votre horizon comptable, puis présente un business plan chiffré sur vingt-cinq ans.`,
+  },
+  {
     slug: "autoconsommation-solaire-maroc",
     title: "Autoconsommation solaire au Maroc : ce qui change en 2026",
     excerpt:
@@ -404,6 +461,24 @@ const TRANSLATIONS: Record<string, Partial<Record<Exclude<LangCode, "fr">, Local
     es: { title: "Hostelería sostenible: el solar, ventaja competitiva", excerpt: "Los hoteles marroquíes adoptan la fotovoltaica para controlar costes y atraer clientela ecológica." },
     zh: { title: "可持续酒店业:太阳能成为竞争优势", excerpt: "摩洛哥酒店采用光伏以控制成本并吸引环保客户。" },
     ar: { title: "الفندقة المستدامة: الشمسي حجة تنافسية كبرى", excerpt: "الفنادق المغربية تعتمد الكهروضوئي للتحكم في التكاليف وجذب زبائن بيئيين." },
+  },
+  "ombrieres-photovoltaiques-parking": {
+    en: { title: "Solar carports: turning a parking lot into a power plant", excerpt: "Comfort for staff, green power and brand image: solar carports stack the benefits." },
+    es: { title: "Pérgolas fotovoltaicas: convertir un aparcamiento en central", excerpt: "Confort, electricidad verde e imagen de marca: la pérgola solar acumula beneficios." },
+    zh: { title: "光伏车棚:把停车场变成发电站", excerpt: "员工舒适、绿色电力与品牌形象兼得。" },
+    ar: { title: "المظلات الكهروضوئية: تحويل الموقف إلى محطة", excerpt: "راحة للعاملين وكهرباء نظيفة وصورة علامة قوية." },
+  },
+  "data-centers-energie-verte": {
+    en: { title: "Data centers: powering digital with green energy", excerpt: "African cloud growth demands reliable, decarbonized power. Solar plus storage delivers." },
+    es: { title: "Centros de datos: alimentar lo digital con energía verde", excerpt: "El crecimiento del cloud africano exige electricidad fiable y descarbonizada." },
+    zh: { title: "数据中心:以绿色能源驱动数字化", excerpt: "非洲云计算增长要求可靠且低碳的电力。" },
+    ar: { title: "مراكز البيانات: تشغيل الرقمي بطاقة نظيفة", excerpt: "نمو الحوسبة السحابية يفرض كهرباء موثوقة ومنزوعة الكربون." },
+  },
+  "financement-vert-projets-solaires": {
+    en: { title: "Green financing: which solution for your solar project?", excerpt: "Self-funding, leasing, PPA or green credit lines: how to pick the most profitable structure." },
+    es: { title: "Financiación verde: ¿qué solución para su proyecto solar?", excerpt: "Autofinanciación, leasing, PPA o líneas verdes: cómo elegir el montaje más rentable." },
+    zh: { title: "绿色融资:光伏项目该如何选择?", excerpt: "自筹、租赁、PPA 还是绿色信贷?如何选出最具收益的方案。" },
+    ar: { title: "التمويل الأخضر: أي حل لمشروعك الشمسي؟", excerpt: "تمويل ذاتي، إيجار، PPA أو خطوط ائتمان أخضر: كيف تختار الأنسب." },
   },
 };
 

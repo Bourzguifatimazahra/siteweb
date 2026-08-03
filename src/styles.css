@@ -145,6 +145,12 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 15px;
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 15.5px;
+    }
   }
 
   body {

@@ -3,26 +3,22 @@ import { AnimatePresence, motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const SLIDES = [
   {
-    img: hero1,
     kicker: "",
     title: ["L'énergie de demain.", "Aujourd'hui."],
     subtitle:
       "Eqnovia offre des solutions complètes pour la production et le stockage d'énergie propre.",
   },
   {
-    img: hero2,
     kicker: "",
     title: ["Le soleil du Maroc,", "au service de vos ambitions."],
     subtitle:
       "Nous concevons et exploitons vos centrales photovoltaïques pour une performance durable.",
   },
   {
-    img: hero3,
     kicker: "",
     title: ["Autonomie énergétique.", "Sécurité totale."],
     subtitle:
@@ -42,26 +38,24 @@ export function HomeHero() {
 
   return (
     <section className="relative h-[calc(100svh-5rem)] min-h-[560px] w-full overflow-hidden text-white">
-      {/* Background image switcher */}
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={index}
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <img
-            src={current.img}
-            alt=""
-            className="h-full w-full object-cover"
-            fetchPriority="high"
-            width={1920}
-            height={1280}
-          />
-        </motion.div>
-      </AnimatePresence>
+      {/* Background video */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <video
+          className="h-full w-full object-cover"
+          src={heroVideo.url}
+          poster={hero1}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+      </motion.div>
 
       {/* Overlays — lighter, more luminous */}
       <div className="absolute inset-0 bg-gradient-to-b from-brand/35 via-brand/25 to-brand/55" />
