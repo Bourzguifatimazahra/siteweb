@@ -462,6 +462,24 @@ const TRANSLATIONS: Record<string, Partial<Record<Exclude<LangCode, "fr">, Local
     zh: { title: "可持续酒店业:太阳能成为竞争优势", excerpt: "摩洛哥酒店采用光伏以控制成本并吸引环保客户。" },
     ar: { title: "الفندقة المستدامة: الشمسي حجة تنافسية كبرى", excerpt: "الفنادق المغربية تعتمد الكهروضوئي للتحكم في التكاليف وجذب زبائن بيئيين." },
   },
+  "ombrieres-photovoltaiques-parking": {
+    en: { title: "Solar carports: turning a parking lot into a power plant", excerpt: "Comfort for staff, green power and brand image: solar carports stack the benefits." },
+    es: { title: "Pérgolas fotovoltaicas: convertir un aparcamiento en central", excerpt: "Confort, electricidad verde e imagen de marca: la pérgola solar acumula beneficios." },
+    zh: { title: "光伏车棚:把停车场变成发电站", excerpt: "员工舒适、绿色电力与品牌形象兼得。" },
+    ar: { title: "المظلات الكهروضوئية: تحويل الموقف إلى محطة", excerpt: "راحة للعاملين وكهرباء نظيفة وصورة علامة قوية." },
+  },
+  "data-centers-energie-verte": {
+    en: { title: "Data centers: powering digital with green energy", excerpt: "African cloud growth demands reliable, decarbonized power. Solar plus storage delivers." },
+    es: { title: "Centros de datos: alimentar lo digital con energía verde", excerpt: "El crecimiento del cloud africano exige electricidad fiable y descarbonizada." },
+    zh: { title: "数据中心:以绿色能源驱动数字化", excerpt: "非洲云计算增长要求可靠且低碳的电力。" },
+    ar: { title: "مراكز البيانات: تشغيل الرقمي بطاقة نظيفة", excerpt: "نمو الحوسبة السحابية يفرض كهرباء موثوقة ومنزوعة الكربون." },
+  },
+  "financement-vert-projets-solaires": {
+    en: { title: "Green financing: which solution for your solar project?", excerpt: "Self-funding, leasing, PPA or green credit lines: how to pick the most profitable structure." },
+    es: { title: "Financiación verde: ¿qué solución para su proyecto solar?", excerpt: "Autofinanciación, leasing, PPA o líneas verdes: cómo elegir el montaje más rentable." },
+    zh: { title: "绿色融资:光伏项目该如何选择?", excerpt: "自筹、租赁、PPA 还是绿色信贷?如何选出最具收益的方案。" },
+    ar: { title: "التمويل الأخضر: أي حل لمشروعك الشمسي؟", excerpt: "تمويل ذاتي، إيجار، PPA أو خطوط ائتمان أخضر: كيف تختار الأنسب." },
+  },
 };
 
 export function getPost(slug: string): BlogPost | undefined {
