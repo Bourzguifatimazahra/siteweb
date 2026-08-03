@@ -44,10 +44,10 @@ function SolutionsPage() {
       <section className="container-eq pt-16 pb-16 lg:pt-24">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Nos solutions</p>
-          <h1 className="text-[40px] lg:text-[64px] font-semibold leading-[1.05] max-w-3xl">
+          <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
             Solaire et stockage : le duo gagnant.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-base text-muted-foreground max-w-2xl">
             Nous combinons production photovoltaïque et stockage d'énergie pour vous offrir
             une autonomie maximale et un retour sur investissement optimisé.
           </p>
@@ -63,7 +63,7 @@ function SolutionsPage() {
                   <div className="absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
                   <s.icon className="h-12 w-12 text-[color:var(--sun)]" />
                   <p className="mt-6 text-sm uppercase tracking-widest text-white/70">{s.subtitle}</p>
-                  <h2 className="mt-2 text-[36px] font-semibold leading-tight">{s.title}</h2>
+                  <h2 className="mt-2 text-[32px] font-semibold leading-tight">{s.title}</h2>
                   <p className="mt-4 text-white/85 leading-relaxed max-w-md">{s.desc}</p>
                 </div>
                 <div className="p-10 lg:p-14 space-y-5">
@@ -85,7 +85,7 @@ function SolutionsPage() {
 
       <section className="container-eq pb-24 text-center">
         <Reveal>
-          <h2 className="text-[32px] lg:text-[44px] font-semibold">Quelle solution pour votre site ?</h2>
+          <h2 className="text-[28px] lg:text-[40px] font-semibold">Quelle solution pour votre site ?</h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
             Chaque site est unique. Contactez-nous pour une étude personnalisée.
           </p>

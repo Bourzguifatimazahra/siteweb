@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, Target, Eye, Heart, Award } from "lucide-react";
+import { CheckCircle2, Target, Eye, Heart } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 
@@ -19,7 +19,7 @@ const VALUES = [
   { icon: Heart, title: "Valeurs", desc: "Rigueur d'ingénieur, exigence de qualité et transparence à chaque étape du projet." },
 ];
 
-const CERTS = ["ISO 9001", "ISO 45001", "MASE", "IEC 61215", "IEC 62446"];
+
 
 function AboutPage() {
   return (
@@ -27,10 +27,10 @@ function AboutPage() {
       <section className="container-eq pt-16 pb-16 lg:pt-24">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Qui sommes-nous</p>
-          <h1 className="text-[40px] lg:text-[64px] font-semibold leading-[1.05] max-w-3xl">
+          <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
             L'expertise solaire au service de l'industrie africaine.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="mt-6 text-base text-muted-foreground max-w-2xl leading-relaxed">
             Fondée par des ingénieurs passionnés, Eqnovia accompagne les entreprises marocaines
             et africaines dans leur transition énergétique — de l'étude à l'exploitation.
           </p>
@@ -45,7 +45,7 @@ function AboutPage() {
                 <div className="h-12 w-12 rounded-2xl bg-primary-soft text-brand grid place-items-center">
                   <v.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold">{v.title}</h3>
+                <h3 className="mt-6 text-xl font-semibold">{v.title}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
             </Reveal>
@@ -54,10 +54,10 @@ function AboutPage() {
       </section>
 
       <section className="bg-secondary/50 py-24">
-        <div className="container-eq grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container-eq max-w-3xl">
           <Reveal>
             <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-3">Notre histoire</p>
-            <h2 className="text-[32px] lg:text-[44px] font-semibold leading-tight">
+            <h2 className="text-[28px] lg:text-[40px] font-semibold leading-tight">
               20 ans d'expertise, 12 experts, une seule ambition.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -79,26 +79,12 @@ function AboutPage() {
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={200}>
-            <div className="rounded-3xl bg-background border border-border p-10">
-              <Award className="h-10 w-10 text-brand" />
-              <h3 className="mt-6 text-2xl font-semibold">Certifications & standards</h3>
-              <p className="mt-3 text-muted-foreground">Nous nous conformons aux plus hauts standards internationaux de qualité et de sécurité.</p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                {CERTS.map((c) => (
-                  <span key={c} className="rounded-full border border-brand/30 bg-primary-soft text-brand text-sm font-semibold px-4 py-2">
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
 
       <section className="container-eq py-24 text-center">
         <Reveal>
-          <h2 className="text-[32px] lg:text-[44px] font-semibold">Envie de travailler avec nous ?</h2>
+          <h2 className="text-[28px] lg:text-[40px] font-semibold">Envie de travailler avec nous ?</h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
             Discutons de votre projet et voyons comment nous pouvons vous accompagner.
           </p>

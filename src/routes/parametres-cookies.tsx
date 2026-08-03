@@ -49,7 +49,7 @@ function Page() {
             <Cookie className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="text-[36px] font-semibold leading-tight">Paramétrage des cookies</h1>
+            <h1 className="text-[32px] font-semibold leading-tight">Paramétrage des cookies</h1>
             <p className="mt-2 text-muted-foreground">Gérez vos préférences en toute transparence, conformément au règlement de la CNDP.</p>
           </div>
         </div>

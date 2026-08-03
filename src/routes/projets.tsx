@@ -55,10 +55,10 @@ function ProjectsPage() {
       <section className="container-eq pt-16 pb-16 lg:pt-24">
         <Reveal>
           <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Nos réalisations</p>
-          <h1 className="text-[40px] lg:text-[64px] font-semibold leading-[1.05] max-w-3xl">
+          <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
             Des projets, des chiffres, des impacts.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
+          <p className="mt-6 text-base text-muted-foreground max-w-2xl">
             Découvrez une sélection de centrales conçues, installées et exploitées par nos équipes
             à travers le Maroc et l'Afrique.
           </p>
@@ -82,7 +82,7 @@ function ProjectsPage() {
               </div>
               <div className="p-10 flex flex-col">
                 <p className="text-sm uppercase tracking-widest text-brand font-semibold">{p.sector}</p>
-                <h2 className="mt-2 text-[28px] font-semibold leading-tight">{p.title}</h2>
+                <h2 className="mt-2 text-[24px] font-semibold leading-tight">{p.title}</h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed">{p.desc}</p>
 
                 <div className="mt-auto pt-8 grid grid-cols-3 gap-4 border-t border-border">
@@ -98,7 +98,7 @@ function ProjectsPage() {
 
       <section className="container-eq pb-24 text-center">
         <Reveal>
-          <h2 className="text-[32px] lg:text-[44px] font-semibold">Le prochain projet, c'est le vôtre ?</h2>
+          <h2 className="text-[28px] lg:text-[40px] font-semibold">Le prochain projet, c'est le vôtre ?</h2>
           <Link to="/contact" className="btn-primary hover:btn-primary-hover mt-8">Démarrer mon projet</Link>
         </Reveal>
       </section>
@@ -111,7 +111,7 @@ function Stat({ icon: Icon, label, value }: { icon: typeof MapPin; label: string
     <div>
       <Icon className="h-4 w-4 text-muted-foreground" />
       <p className="mt-2 text-xs text-muted-foreground">{label}</p>
-      <p className="text-lg font-semibold text-brand">{value}</p>
+      <p className="text-base font-semibold text-brand">{value}</p>
     </div>
   );
 }

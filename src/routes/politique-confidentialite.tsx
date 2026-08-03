@@ -15,7 +15,7 @@ function Page() {
   return (
     <SiteLayout>
       <article className="container-eq py-16 max-w-3xl">
-        <h1 className="text-[40px] font-semibold">Politique de confidentialité</h1>
+        <h1 className="text-[36px] font-semibold">Politique de confidentialité</h1>
         <p className="mt-4 text-muted-foreground">Conforme à la loi 09-08 et au règlement de la <strong>CNDP</strong> (Commission Nationale de contrôle de la protection des Données à caractère Personnel).</p>
 
         <S title="1. Responsable du traitement">
