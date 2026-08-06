@@ -39,7 +39,13 @@ export function CookieBanner() {
         </div>
         <div className="flex flex-wrap gap-2 mt-5">
           <button onClick={() => decide("all")} className="btn-primary hover:btn-primary-hover text-sm px-5 py-2.5">Accepter tous</button>
-          <button onClick={() => decide("custom")} className="btn-outline text-sm px-5 py-2.5">Paramétrer</button>
+          <Link
+            to="/parametres-cookies"
+            onClick={() => setVisible(false)}
+            className="btn-outline text-sm px-5 py-2.5"
+          >
+            Paramétrer les cookies
+          </Link>
           <button onClick={() => decide("necessary")} className="text-sm px-5 py-2.5 text-muted-foreground hover:text-foreground transition-colors">Refuser</button>
         </div>
       </div>
