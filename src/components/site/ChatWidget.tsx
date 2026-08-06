@@ -7,12 +7,43 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useLang } from "@/lib/i18n";
 
+const COPY = {
+  fr: {
+    online: "● En ligne",
+    questions: [
+      "Quels sont vos services ?",
+      "Comment obtenir un devis ?",
+      "Parlez-moi du stockage BESS",
+      "Vos références au Maroc ?",
+    ],
+  },
+  en: {
+    online: "● Online",
+    questions: [
+      "What are your services?",
+      "How do I get a quote?",
+      "Tell me about BESS storage",
+      "Your references in Morocco?",
+    ],
+  },
+  es: {
+    online: "● En línea",
+    questions: [
+      "¿Cuáles son sus servicios?",
+      "¿Cómo obtener un presupuesto?",
+      "Hábleme del almacenamiento BESS",
+      "¿Sus referencias en Marruecos?",
+    ],
+  },
+} as const;
+
 const transport = new DefaultChatTransport({ api: "/api/chat" });
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const { t, dir } = useLang();
+  const { t, dir, lang } = useLang();
+  const c = COPY[lang];
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const { messages, sendMessage, status } = useChat({
@@ -77,7 +108,7 @@ export function ChatWidget() {
               </div>
               <div className="text-white flex-1">
                 <p className="font-semibold text-sm">{t("chat.title")}</p>
-                <p className="text-xs text-white/70">● En ligne</p>
+                <p className="text-xs text-white/70">{c.online}</p>
               </div>
             </div>
 
@@ -88,12 +119,7 @@ export function ChatWidget() {
                     {t("chat.welcome")}
                   </div>
                   <div className="flex flex-wrap gap-2 pt-2">
-                    {[
-                      "Quels sont vos services ?",
-                      "Comment obtenir un devis ?",
-                      "Parlez-moi du stockage BESS",
-                      "Vos références au Maroc ?",
-                    ].map((q) => (
+                    {c.questions.map((q) => (
                       <button
                         key={q}
                         onClick={() => sendMessage({ text: q })}
