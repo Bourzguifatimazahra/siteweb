@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, ArrowUpRight, LineChart, Wrench, Cog, Factory, School, Hotel,
-  Building2, Tractor, HeartPulse, Sun, BatteryCharging,
+  Building2, Tractor, HeartPulse, Sun, BatteryCharging, CheckCircle2,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
@@ -80,6 +80,51 @@ function HomePage() {
   return (
     <SiteLayout>
       <HomeHero />
+
+      {/* ABOUT */}
+      <section className="container-eq py-24">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-3">Qui sommes-nous</p>
+            <h2 className="text-[32px] lg:text-[44px] font-semibold leading-tight max-w-xl">
+              L'expertise solaire au service de l'industrie africaine.
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl">
+              Fondée par des ingénieurs passionnés, Eqnovia accompagne les entreprises marocaines
+              et africaines dans leur transition énergétique — de l'étude à l'exploitation.
+            </p>
+            <ul className="mt-8 space-y-3">
+              {[
+                "Ingénieurs et techniciens certifiés",
+                "Approche end-to-end : étude, EPC, O&M",
+                "Financement structuré adapté à chaque profil",
+                "Supervision continue depuis notre centre de contrôle",
+              ].map((item) => (
+                <li key={item} className="flex gap-3 text-foreground">
+                  <CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Link to="/a-propos" className="btn-primary hover:btn-primary-hover mt-8">
+              En savoir plus <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] group">
+              <img
+                src={projCasa}
+                alt="Projet Eqnovia Casablanca"
+                loading="lazy"
+                width={1280}
+                height={960}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand/30 to-transparent" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* STATS */}
       <section className="border-y border-border bg-secondary/60">
