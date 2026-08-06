@@ -4,7 +4,7 @@ import { ArrowLeft, Calendar, Clock, Play, Pause, Square, Volume2 } from "lucide
 import { motion } from "motion/react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { getPost, POSTS, localizePost } from "@/lib/blog-posts";
-import { useLang } from "@/lib/i18n";
+import { useLang, LOCALE_MAP } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => {
@@ -23,14 +23,8 @@ export const Route = createFileRoute("/blog/$slug")({
     return { post };
   },
   component: ArticlePage,
-  notFoundComponent: () => (
-    <SiteLayout>
-      <div className="container-eq py-24 text-center">
-        <h1 className="text-3xl font-semibold">Article introuvable</h1>
-        <Link to="/blog" className="btn-primary hover:btn-primary-hover mt-6">Retour au blog</Link>
-      </div>
-    </SiteLayout>
-  ),
+  notFoundComponent: () => <ArticleNotFound />,
+
 });
 
 function ArticlePage() {
@@ -57,7 +51,7 @@ function ArticlePage() {
     }
     window.speechSynthesis.cancel();
     const utt = new SpeechSynthesisUtterance(`${loc.title}. ${loc.content}`);
-    const langMap: Record<string, string> = { fr: "fr-FR", en: "en-US", es: "es-ES", zh: "zh-CN", ar: "ar-SA" };
+    const langMap: Record<string, string> = { fr: "fr-FR", en: "en-US", es: "es-ES" };
     utt.lang = langMap[lang] ?? "fr-FR";
     utt.rate = 1;
     utt.onend = () => setState("idle");
@@ -89,7 +83,7 @@ function ArticlePage() {
           transition={{ duration: 0.4 }}
         >
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-brand transition-colors mb-8 group">
-            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" /> Blog
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" /> {t("blog.back")}
           </Link>
         </motion.div>
 
@@ -99,7 +93,7 @@ function ArticlePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
-          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString(({fr:"fr-FR",en:"en-US",es:"es-ES",zh:"zh-CN",ar:"ar-SA"} as Record<string,string>)[lang] ?? "fr-FR")}</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString(LOCALE_MAP[lang])}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
           <span>· {post.author}</span>
         </motion.div>
@@ -156,7 +150,7 @@ function ArticlePage() {
             <div className="flex-1 text-sm">
               <p className="font-semibold">{t("blog.listen")}</p>
               <p className="text-muted-foreground text-xs">
-                {state === "playing" ? "En lecture…" : state === "paused" ? "En pause" : "Text-to-Speech"}
+                {state === "playing" ? t("blog.playing") : state === "paused" ? t("blog.paused") : "Text-to-Speech"}
               </p>
             </div>
             <div className="flex gap-2">
@@ -218,7 +212,7 @@ function ArticlePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-sm text-muted-foreground mb-4">Autres articles</p>
+          <p className="text-sm text-muted-foreground mb-4">{t("blog.others")}</p>
           <div className="grid sm:grid-cols-2 gap-4">
             {POSTS.filter((p) => p.slug !== post.slug).slice(0, 2).map((p, i) => (
               <motion.div
@@ -242,3 +236,15 @@ function ArticlePage() {
   );
 }
 
+
+function ArticleNotFound() {
+  const { t } = useLang();
+  return (
+    <SiteLayout>
+      <div className="container-eq py-24 text-center">
+        <h1 className="text-3xl font-semibold">{t("blog.notfound")}</h1>
+        <Link to="/blog" className="btn-primary hover:btn-primary-hover mt-6">{t("blog.backToBlog")}</Link>
+      </div>
+    </SiteLayout>
+  );
+}

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Cookie, Save, RotateCcw } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { toast } from "sonner";
+import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/parametres-cookies")({
   head: () => ({
@@ -19,7 +20,54 @@ const KEY = "eqnovia-cookie-prefs";
 type Prefs = { necessary: true; analytics: boolean; marketing: boolean };
 const DEFAULT: Prefs = { necessary: true, analytics: false, marketing: false };
 
+const COPY = {
+  fr: {
+    heading: "Paramétrage des cookies",
+    subheading: "Gérez vos préférences en toute transparence, conformément au règlement de la CNDP.",
+    necessaryTitle: "Cookies strictement nécessaires",
+    necessaryDesc: "Indispensables au fonctionnement du site (session, sécurité, préférences de langue). Toujours actifs.",
+    analyticsTitle: "Cookies d'analyse & performance",
+    analyticsDesc: "Nous aident à comprendre l'usage du site pour l'améliorer (statistiques anonymisées).",
+    marketingTitle: "Cookies marketing",
+    marketingDesc: "Utilisés pour personnaliser les contenus et mesurer l'efficacité de nos campagnes.",
+    save: "Enregistrer mes préférences",
+    reset: "Réinitialiser",
+    savedToast: "Préférences enregistrées",
+    resetToast: "Préférences réinitialisées",
+  },
+  en: {
+    heading: "Cookie Settings",
+    subheading: "Manage your preferences with full transparency, in compliance with CNDP regulations.",
+    necessaryTitle: "Strictly necessary cookies",
+    necessaryDesc: "Essential for the site to function (session, security, language preferences). Always active.",
+    analyticsTitle: "Analytics & performance cookies",
+    analyticsDesc: "Help us understand site usage to improve it (anonymized statistics).",
+    marketingTitle: "Marketing cookies",
+    marketingDesc: "Used to personalize content and measure the effectiveness of our campaigns.",
+    save: "Save my preferences",
+    reset: "Reset",
+    savedToast: "Preferences saved",
+    resetToast: "Preferences reset",
+  },
+  es: {
+    heading: "Configuración de cookies",
+    subheading: "Gestione sus preferencias con total transparencia, conforme al reglamento de la CNDP.",
+    necessaryTitle: "Cookies estrictamente necesarias",
+    necessaryDesc: "Indispensables para el funcionamiento del sitio (sesión, seguridad, preferencias de idioma). Siempre activas.",
+    analyticsTitle: "Cookies de análisis y rendimiento",
+    analyticsDesc: "Nos ayudan a comprender el uso del sitio para mejorarlo (estadísticas anonimizadas).",
+    marketingTitle: "Cookies de marketing",
+    marketingDesc: "Utilizadas para personalizar contenidos y medir la eficacia de nuestras campañas.",
+    save: "Guardar mis preferencias",
+    reset: "Restablecer",
+    savedToast: "Preferencias guardadas",
+    resetToast: "Preferencias restablecidas",
+  },
+} as const;
+
 function Page() {
+  const { lang } = useLang();
+  const c = COPY[lang];
   const [prefs, setPrefs] = useState<Prefs>(DEFAULT);
 
   useEffect(() => {
@@ -34,11 +82,11 @@ function Page() {
   const save = () => {
     localStorage.setItem(KEY, JSON.stringify(prefs));
     localStorage.setItem("eqnovia-cookie-consent", "custom");
-    toast.success("Préférences enregistrées");
+    toast.success(c.savedToast);
   };
   const reset = () => {
     setPrefs(DEFAULT);
-    toast("Préférences réinitialisées");
+    toast(c.resetToast);
   };
 
   return (
@@ -49,28 +97,28 @@ function Page() {
             <Cookie className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="text-[32px] font-semibold leading-tight">Paramétrage des cookies</h1>
-            <p className="mt-2 text-muted-foreground">Gérez vos préférences en toute transparence, conformément au règlement de la CNDP.</p>
+            <h1 className="text-[32px] font-semibold leading-tight">{c.heading}</h1>
+            <p className="mt-2 text-muted-foreground">{c.subheading}</p>
           </div>
         </div>
 
         <div className="mt-10 space-y-4">
           <CookieRow
-            title="Cookies strictement nécessaires"
-            desc="Indispensables au fonctionnement du site (session, sécurité, préférences de langue). Toujours actifs."
+            title={c.necessaryTitle}
+            desc={c.necessaryDesc}
             enabled
             disabled
             onChange={() => {}}
           />
           <CookieRow
-            title="Cookies d'analyse & performance"
-            desc="Nous aident à comprendre l'usage du site pour l'améliorer (statistiques anonymisées)."
+            title={c.analyticsTitle}
+            desc={c.analyticsDesc}
             enabled={prefs.analytics}
             onChange={(v) => setPrefs((p) => ({ ...p, analytics: v }))}
           />
           <CookieRow
-            title="Cookies marketing"
-            desc="Utilisés pour personnaliser les contenus et mesurer l'efficacité de nos campagnes."
+            title={c.marketingTitle}
+            desc={c.marketingDesc}
             enabled={prefs.marketing}
             onChange={(v) => setPrefs((p) => ({ ...p, marketing: v }))}
           />
@@ -78,10 +126,10 @@ function Page() {
 
         <div className="mt-10 flex flex-wrap gap-3">
           <button onClick={save} className="btn-primary hover:btn-primary-hover">
-            <Save className="h-4 w-4" /> Enregistrer mes préférences
+            <Save className="h-4 w-4" /> {c.save}
           </button>
           <button onClick={reset} className="btn-outline hover:bg-primary-soft">
-            <RotateCcw className="h-4 w-4" /> Réinitialiser
+            <RotateCcw className="h-4 w-4" /> {c.reset}
           </button>
         </div>
       </article>

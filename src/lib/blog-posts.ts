@@ -1,4 +1,4 @@
-export type LangCode = "fr" | "en" | "es" | "zh" | "ar";
+export type LangCode = "fr" | "en" | "es";
 
 export type LocalizedText = { title: string; excerpt: string; content?: string };
 
@@ -375,110 +375,74 @@ const TRANSLATIONS: Record<string, Partial<Record<Exclude<LangCode, "fr">, Local
   "autoconsommation-solaire-maroc": {
     en: { title: "Solar self-consumption in Morocco: what changes in 2026", excerpt: "Law 82-21 on self-generation opens new opportunities for Moroccan industries. A complete breakdown." },
     es: { title: "Autoconsumo solar en Marruecos: qué cambia en 2026", excerpt: "La ley 82-21 sobre autoproducción abre nuevas oportunidades para la industria marroquí. Análisis completo." },
-    zh: { title: "摩洛哥太阳能自消费:2026年的变化", excerpt: "82-21号自发电法为摩洛哥工业带来新机遇。全面解读。" },
-    ar: { title: "الاستهلاك الذاتي الشمسي في المغرب: ما يتغير في 2026", excerpt: "قانون 82-21 حول الإنتاج الذاتي يفتح فرصاً جديدة للصناعة المغربية. تحليل شامل." },
   },
   "stockage-bess-industriel": {
     en: { title: "BESS storage: the key to industrial energy autonomy", excerpt: "How battery systems transform the stability and resilience of African industrial sites." },
     es: { title: "Almacenamiento BESS: la clave de la autonomía energética industrial", excerpt: "Cómo los sistemas de baterías transforman la estabilidad de sitios industriales africanos." },
-    zh: { title: "BESS储能:工业能源自主的关键", excerpt: "电池系统如何改变非洲工业站点的稳定性与韧性。" },
-    ar: { title: "تخزين BESS: مفتاح الاستقلالية الطاقوية الصناعية", excerpt: "كيف تحول أنظمة البطاريات استقرار المواقع الصناعية الأفريقية." },
   },
   "ombrieres-solaires-logistique": {
     en: { title: "Solar carports: double benefit for logistics", excerpt: "Generate energy while sheltering vehicles: the smart solution for large parking lots." },
     es: { title: "Marquesinas fotovoltaicas: doble beneficio para la logística", excerpt: "Producir energía y a la vez proteger vehículos: la solución inteligente." },
-    zh: { title: "光伏车棚:物流的双重收益", excerpt: "既发电又遮蔽车辆:大型停车场的智能方案。" },
-    ar: { title: "المظلات الشمسية: فائدة مزدوجة للوجستيك", excerpt: "إنتاج الطاقة مع حماية المركبات: الحل الذكي للمواقف الكبيرة." },
   },
   "epc-cle-en-main-eqnovia": {
     en: { title: "Turnkey EPC: how Eqnovia secures your solar projects", excerpt: "From study to grid connection, discover Eqnovia's EPC methodology for bankable plants." },
     es: { title: "EPC llave en mano: cómo Eqnovia asegura sus proyectos solares", excerpt: "Del estudio a la conexión, la metodología EPC de Eqnovia para plantas bancables." },
-    zh: { title: "EPC总包:Eqnovia如何保障您的太阳能项目", excerpt: "从设计到并网,发现Eqnovia的EPC方法论。" },
-    ar: { title: "EPC مفتاح اليد: كيف تؤمن Eqnovia مشاريعك الشمسية", excerpt: "من الدراسة إلى الربط، منهجية EPC لدى Eqnovia لمحطات قابلة للتمويل." },
   },
   "financement-ppa-solaire": {
     en: { title: "Solar PPA: go green with zero upfront investment", excerpt: "Third-party investment (PPA) brings solar benefits without capex. How does it work?" },
     es: { title: "PPA solar: producir verde sin inversión inicial", excerpt: "La tercera inversión (PPA) permite disfrutar del solar sin capex. ¿Cómo funciona?" },
-    zh: { title: "太阳能PPA:零投资的绿色能源", excerpt: "第三方投资(PPA)让您无需资本支出即可享用太阳能。" },
-    ar: { title: "PPA الشمسي: إنتاج أخضر بلا استثمار مسبق", excerpt: "التمويل الثالث (PPA) يتيح الاستفادة من الشمسي دون رأسمال." },
   },
   "agrivoltaisme-maroc": {
     en: { title: "Agrivoltaics: when Moroccan agriculture meets solar", excerpt: "Produce electricity while protecting crops: agrivoltaics answers water stress." },
     es: { title: "Agrovoltaica: cuando la agricultura marroquí se encuentra con el sol", excerpt: "Producir electricidad protegiendo cultivos: respuesta al estrés hídrico." },
-    zh: { title: "农光互补:摩洛哥农业遇上太阳能", excerpt: "发电同时保护作物:农光互补应对水资源压力。" },
-    ar: { title: "الزراعة الكهروضوئية: عندما تلتقي الفلاحة المغربية بالشمس", excerpt: "إنتاج الكهرباء وحماية المحاصيل: جواب على الإجهاد المائي." },
   },
   "hydrogene-vert-afrique": {
     en: { title: "Green hydrogen: is Africa the next global hub?", excerpt: "Morocco and its neighbors have unique assets to lead the decarbonized hydrogen market." },
     es: { title: "Hidrógeno verde: ¿África, futuro hub mundial?", excerpt: "Marruecos y sus vecinos tienen activos únicos para liderar el hidrógeno descarbonizado." },
-    zh: { title: "绿氢:非洲能否成为全球枢纽?", excerpt: "摩洛哥及其邻国具备引领脱碳氢市场的独特优势。" },
-    ar: { title: "الهيدروجين الأخضر: هل تصبح أفريقيا القطب العالمي المقبل؟", excerpt: "المغرب وجيرانه يمتلكون أصولاً فريدة لقيادة سوق الهيدروجين." },
   },
   "maintenance-o-et-m-solaire": {
     en: { title: "Solar O&M: securing 25 years of performance", excerpt: "Operation and maintenance drive the real profitability of a plant. Eqnovia best practices." },
     es: { title: "O&M solar: garantizar 25 años de rendimiento", excerpt: "La operación y mantenimiento determinan la rentabilidad real. Buenas prácticas Eqnovia." },
-    zh: { title: "光伏运维:保障25年发电性能", excerpt: "运营与维护决定电站真实收益。Eqnovia最佳实践。" },
-    ar: { title: "التشغيل والصيانة الشمسية: ضمان 25 سنة من الأداء", excerpt: "التشغيل والصيانة يحددان الربحية الحقيقية للمحطة." },
   },
   "decarbonation-industrie-maroc": {
     en: { title: "Decarbonizing Moroccan industry: where to start?", excerpt: "Faced with EU CBAM, Moroccan industries must structure a low-carbon roadmap." },
     es: { title: "Descarbonizar la industria marroquí: ¿por dónde empezar?", excerpt: "Ante el CBAM europeo, la industria marroquí debe estructurar su trayectoria baja en carbono." },
-    zh: { title: "摩洛哥工业脱碳:从何开始?", excerpt: "面对欧盟CBAM,摩洛哥工业需构建低碳路径。" },
-    ar: { title: "إزالة الكربون من الصناعة المغربية: من أين نبدأ؟", excerpt: "أمام CBAM الأوروبي، يجب على الصناعة المغربية بناء مسار منخفض الكربون." },
   },
   "microgrids-electrification-rurale": {
     en: { title: "Solar microgrids: electrifying remote areas", excerpt: "How PV mini-grids revolutionize electricity access in sub-Saharan Africa." },
     es: { title: "Microrredes solares: electrificar zonas aisladas", excerpt: "Cómo las minirredes fotovoltaicas revolucionan el acceso a la electricidad." },
-    zh: { title: "太阳能微电网:偏远地区电气化", excerpt: "光伏微电网如何革新撒哈拉以南非洲的电力接入。" },
-    ar: { title: "الشبكات الصغيرة الشمسية: كهربة المناطق المعزولة", excerpt: "كيف تُحدث الشبكات الصغيرة الكهروضوئية ثورة في الوصول للكهرباء." },
   },
   "toitures-solaires-industrielles": {
     en: { title: "Industrial solar rooftops: maximize every square meter", excerpt: "How to turn a factory roof into a high-performing energy asset without harming waterproofing." },
     es: { title: "Cubiertas solares industriales: maximizar cada metro cuadrado", excerpt: "Cómo convertir una cubierta de fábrica en activo energético sin comprometer la estanqueidad." },
-    zh: { title: "工业光伏屋顶:充分利用每一平方米", excerpt: "如何将厂房屋顶变为高效能源资产,不损害防水层。" },
-    ar: { title: "الأسطح الشمسية الصناعية: تعظيم كل متر مربع", excerpt: "كيف نحول سطح المصنع إلى أصل طاقوي فعال دون المساس بالعزل." },
   },
   "irrigation-solaire-agriculture": {
     en: { title: "Solar pumping: irrigate without grid dependence", excerpt: "PV pumping frees Moroccan farms from diesel and outages." },
     es: { title: "Bombeo solar: regar sin depender de la red", excerpt: "El bombeo fotovoltaico libera a las explotaciones marroquíes del gasóleo y los cortes." },
-    zh: { title: "太阳能水泵:摆脱电网灌溉", excerpt: "光伏水泵让摩洛哥农场摆脱柴油与停电。" },
-    ar: { title: "الضخ الشمسي: الري دون الاعتماد على الشبكة", excerpt: "الضخ الكهروضوئي يحرر المزارع المغربية من الديزل والانقطاعات." },
   },
   "recyclage-panneaux-solaires": {
     en: { title: "Solar panel recycling: the PV circular economy", excerpt: "What happens to end-of-life modules? Recycling channels and stakes for Morocco." },
     es: { title: "Reciclaje de paneles solares: la economía circular del fotovoltaico", excerpt: "¿Qué pasa con los módulos al final de su vida? Panorama y retos para Marruecos." },
-    zh: { title: "光伏板回收:光伏循环经济", excerpt: "报废组件何去何从?回收产业与摩洛哥的机遇。" },
-    ar: { title: "إعادة تدوير الألواح الشمسية: الاقتصاد الدائري الكهروضوئي", excerpt: "ما مصير الألواح في نهاية عمرها؟ قنوات التدوير ورهاناتها للمغرب." },
   },
   "eclairage-public-solaire": {
     en: { title: "Solar street lighting: safer cities, lower bills", excerpt: "Autonomous PV lampposts are the ideal answer for Moroccan municipalities." },
     es: { title: "Alumbrado público solar: ciudades más seguras, facturas más bajas", excerpt: "Las farolas fotovoltaicas autónomas son la solución ideal para municipios." },
-    zh: { title: "太阳能路灯:更安全的城市,更低的账单", excerpt: "自主光伏路灯是摩洛哥市政的理想方案。" },
-    ar: { title: "الإنارة العمومية الشمسية: مدن أكثر أمناً وفواتير أقل", excerpt: "الأعمدة الكهروضوئية المستقلة هي الحل المثالي للجماعات." },
   },
   "solaire-hotellerie-tourisme": {
     en: { title: "Sustainable hospitality: solar as a competitive edge", excerpt: "Moroccan hotels adopt PV to control costs and attract eco-conscious guests." },
     es: { title: "Hostelería sostenible: el solar, ventaja competitiva", excerpt: "Los hoteles marroquíes adoptan la fotovoltaica para controlar costes y atraer clientela ecológica." },
-    zh: { title: "可持续酒店业:太阳能成为竞争优势", excerpt: "摩洛哥酒店采用光伏以控制成本并吸引环保客户。" },
-    ar: { title: "الفندقة المستدامة: الشمسي حجة تنافسية كبرى", excerpt: "الفنادق المغربية تعتمد الكهروضوئي للتحكم في التكاليف وجذب زبائن بيئيين." },
   },
   "ombrieres-photovoltaiques-parking": {
     en: { title: "Solar carports: turning a parking lot into a power plant", excerpt: "Comfort for staff, green power and brand image: solar carports stack the benefits." },
     es: { title: "Pérgolas fotovoltaicas: convertir un aparcamiento en central", excerpt: "Confort, electricidad verde e imagen de marca: la pérgola solar acumula beneficios." },
-    zh: { title: "光伏车棚:把停车场变成发电站", excerpt: "员工舒适、绿色电力与品牌形象兼得。" },
-    ar: { title: "المظلات الكهروضوئية: تحويل الموقف إلى محطة", excerpt: "راحة للعاملين وكهرباء نظيفة وصورة علامة قوية." },
   },
   "data-centers-energie-verte": {
     en: { title: "Data centers: powering digital with green energy", excerpt: "African cloud growth demands reliable, decarbonized power. Solar plus storage delivers." },
     es: { title: "Centros de datos: alimentar lo digital con energía verde", excerpt: "El crecimiento del cloud africano exige electricidad fiable y descarbonizada." },
-    zh: { title: "数据中心:以绿色能源驱动数字化", excerpt: "非洲云计算增长要求可靠且低碳的电力。" },
-    ar: { title: "مراكز البيانات: تشغيل الرقمي بطاقة نظيفة", excerpt: "نمو الحوسبة السحابية يفرض كهرباء موثوقة ومنزوعة الكربون." },
   },
   "financement-vert-projets-solaires": {
     en: { title: "Green financing: which solution for your solar project?", excerpt: "Self-funding, leasing, PPA or green credit lines: how to pick the most profitable structure." },
     es: { title: "Financiación verde: ¿qué solución para su proyecto solar?", excerpt: "Autofinanciación, leasing, PPA o líneas verdes: cómo elegir el montaje más rentable." },
-    zh: { title: "绿色融资:光伏项目该如何选择?", excerpt: "自筹、租赁、PPA 还是绿色信贷?如何选出最具收益的方案。" },
-    ar: { title: "التمويل الأخضر: أي حل لمشروعك الشمسي؟", excerpt: "تمويل ذاتي، إيجار، PPA أو خطوط ائتمان أخضر: كيف تختار الأنسب." },
   },
 };
 

@@ -4,35 +4,96 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import { useLang } from "@/lib/i18n";
 
-const SLIDES = [
-  {
-    kicker: "",
-    title: ["L'énergie de demain.", "Aujourd'hui."],
-    subtitle:
-      "Eqnovia offre des solutions complètes pour la production et le stockage d'énergie propre.",
+const COPY = {
+  fr: {
+    slides: [
+      {
+        kicker: "",
+        title: ["L'énergie de demain.", "Aujourd'hui."],
+        subtitle:
+          "Eqnovia offre des solutions complètes pour la production et le stockage d'énergie propre.",
+      },
+      {
+        kicker: "",
+        title: ["Le soleil du Maroc,", "au service de vos ambitions."],
+        subtitle:
+          "Nous concevons et exploitons vos centrales photovoltaïques pour une performance durable.",
+      },
+      {
+        kicker: "",
+        title: ["Autonomie énergétique.", "Sécurité totale."],
+        subtitle:
+          "Nos systèmes de stockage garantissent la continuité et la résilience de votre alimentation.",
+      },
+    ],
+    cta1: "Lancez votre projet",
+    cta2: "Découvrir nos services",
+    slide: "Slide",
   },
-  {
-    kicker: "",
-    title: ["Le soleil du Maroc,", "au service de vos ambitions."],
-    subtitle:
-      "Nous concevons et exploitons vos centrales photovoltaïques pour une performance durable.",
+  en: {
+    slides: [
+      {
+        kicker: "",
+        title: ["The energy of tomorrow.", "Today."],
+        subtitle:
+          "Eqnovia offers complete solutions for clean energy production and storage.",
+      },
+      {
+        kicker: "",
+        title: ["Morocco's sun,", "serving your ambitions."],
+        subtitle:
+          "We design and operate your photovoltaic plants for lasting performance.",
+      },
+      {
+        kicker: "",
+        title: ["Energy autonomy.", "Total security."],
+        subtitle:
+          "Our storage systems ensure the continuity and resilience of your power supply.",
+      },
+    ],
+    cta1: "Start your project",
+    cta2: "Discover our services",
+    slide: "Slide",
   },
-  {
-    kicker: "",
-    title: ["Autonomie énergétique.", "Sécurité totale."],
-    subtitle:
-      "Nos systèmes de stockage garantissent la continuité et la résilience de votre alimentation.",
+  es: {
+    slides: [
+      {
+        kicker: "",
+        title: ["La energía del mañana.", "Hoy."],
+        subtitle:
+          "Eqnovia ofrece soluciones completas para la producción y el almacenamiento de energía limpia.",
+      },
+      {
+        kicker: "",
+        title: ["El sol de Marruecos,", "al servicio de sus ambiciones."],
+        subtitle:
+          "Diseñamos y operamos sus plantas fotovoltaicas para un rendimiento duradero.",
+      },
+      {
+        kicker: "",
+        title: ["Autonomía energética.", "Seguridad total."],
+        subtitle:
+          "Nuestros sistemas de almacenamiento garantizan la continuidad y resiliencia de su suministro.",
+      },
+    ],
+    cta1: "Inicie su proyecto",
+    cta2: "Descubrir nuestros servicios",
+    slide: "Diapositiva",
   },
-];
+} as const;
 
 export function HomeHero() {
   const [index, setIndex] = useState(0);
+  const { lang } = useLang();
+  const c = COPY[lang];
+  const SLIDES = c.slides;
 
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % SLIDES.length), 6500);
     return () => clearInterval(id);
-  }, []);
+  }, [SLIDES.length]);
 
   const current = SLIDES[index];
 
@@ -120,13 +181,13 @@ export function HomeHero() {
                 className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-[1.03]"
                 style={{ backgroundColor: "#f18f01" }}
               >
-                Lancez votre projet <ArrowRight className="h-4 w-4" />
+                {c.cta1} <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition-colors"
               >
-                Découvrir nos services
+                {c.cta2}
               </Link>
             </div>
           </motion.div>
@@ -138,7 +199,7 @@ export function HomeHero() {
             <button
               key={i}
               onClick={() => setIndex(i)}
-              aria-label={`Slide ${i + 1}`}
+              aria-label={`${c.slide} ${i + 1}`}
               className="group relative h-1.5 w-10 rounded-full bg-white/25 overflow-hidden"
             >
               {i === index && (

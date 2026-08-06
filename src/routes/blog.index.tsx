@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { POSTS, localizePost } from "@/lib/blog-posts";
-import { useLang } from "@/lib/i18n";
+import { useLang, LOCALE_MAP } from "@/lib/i18n";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Blog — Eqnovia" },
@@ -33,7 +33,6 @@ function BlogPage() {
       <section className="container-eq pb-24 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {POSTS.map((p, i) => {
           const loc = localizePost(p, lang);
-          const localeMap: Record<string, string> = { fr: "fr-FR", en: "en-US", es: "es-ES", zh: "zh-CN", ar: "ar-SA" };
           return (
           <Reveal key={p.slug} delay={i * 100}>
             <motion.div
@@ -63,7 +62,7 @@ function BlogPage() {
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(p.date).toLocaleDateString(localeMap[lang] ?? "fr-FR")}</span>
+                    <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(p.date).toLocaleDateString(LOCALE_MAP[lang])}</span>
                     <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{p.readingTime}</span>
                   </div>
                   <h2 className="mt-3 text-xl font-semibold leading-snug group-hover:text-brand transition-colors">
