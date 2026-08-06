@@ -236,3 +236,15 @@ function ArticlePage() {
   );
 }
 
+
+function ArticleNotFound() {
+  const { t } = useLang();
+  return (
+    <SiteLayout>
+      <div className="container-eq py-24 text-center">
+        <h1 className="text-3xl font-semibold">{t("blog.notfound")}</h1>
+        <Link to="/blog" className="btn-primary hover:btn-primary-hover mt-6">{t("blog.backToBlog")}</Link>
+      </div>
+    </SiteLayout>
+  );
+}
