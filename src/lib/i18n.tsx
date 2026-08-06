@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type Lang = "fr" | "en" | "zh" | "ar" | "es";
+export type Lang = "fr" | "en" | "es";
 
 type Dict = Record<string, string>;
 
@@ -25,11 +25,17 @@ const DICT: Record<Lang, Dict> = {
     "blog.listen": "Écouter",
     "blog.pause": "Pause",
     "blog.stop": "Arrêter",
+    "blog.back": "Blog",
+    "blog.others": "Autres articles",
+    "blog.playing": "En lecture…",
+    "blog.paused": "En pause",
+    "blog.notfound": "Article introuvable",
+    "blog.backToBlog": "Retour au blog",
     "cookies.settings": "Paramétrer les cookies",
   },
   en: {
     "nav.home": "Home",
-    "nav.about": "About",
+    "nav.about": "About us",
     "nav.services": "Services",
     "nav.solutions": "Solutions",
     "nav.projects": "Projects",
@@ -47,51 +53,13 @@ const DICT: Record<Lang, Dict> = {
     "blog.listen": "Listen",
     "blog.pause": "Pause",
     "blog.stop": "Stop",
+    "blog.back": "Blog",
+    "blog.others": "More articles",
+    "blog.playing": "Playing…",
+    "blog.paused": "Paused",
+    "blog.notfound": "Article not found",
+    "blog.backToBlog": "Back to blog",
     "cookies.settings": "Cookie settings",
-  },
-  zh: {
-    "nav.home": "首页",
-    "nav.about": "关于我们",
-    "nav.services": "服务",
-    "nav.solutions": "解决方案",
-    "nav.projects": "项目",
-    "nav.blog": "博客",
-    "nav.contact": "联系",
-    "cta.start": "启动您的项目",
-    "chat.title": "Eqnovia 助手",
-    "chat.placeholder": "请输入您的问题…",
-    "chat.welcome": "您好 👋 我是 Eqnovia 助手。请问有什么可以帮您？",
-    "wa.label": "WhatsApp 聊天",
-    "lang.label": "语言",
-    "blog.title": "博客与新闻",
-    "blog.subtitle": "太阳能与储能行业的洞察、案例与创新。",
-    "blog.read": "阅读文章",
-    "blog.listen": "收听",
-    "blog.pause": "暂停",
-    "blog.stop": "停止",
-    "cookies.settings": "Cookie 设置",
-  },
-  ar: {
-    "nav.home": "الرئيسية",
-    "nav.about": "من نحن",
-    "nav.services": "الخدمات",
-    "nav.solutions": "الحلول",
-    "nav.projects": "المشاريع",
-    "nav.blog": "المدونة",
-    "nav.contact": "اتصل بنا",
-    "cta.start": "ابدأ مشروعك",
-    "chat.title": "مساعد إيكنوفيا",
-    "chat.placeholder": "اطرح سؤالك…",
-    "chat.welcome": "مرحباً 👋 أنا مساعد إيكنوفيا. كيف يمكنني مساعدتك؟",
-    "wa.label": "دردشة واتساب",
-    "lang.label": "اللغة",
-    "blog.title": "المدونة والأخبار",
-    "blog.subtitle": "رؤى وتجارب وابتكارات في الطاقة الشمسية وتخزين الطاقة.",
-    "blog.read": "قراءة المقال",
-    "blog.listen": "استماع",
-    "blog.pause": "إيقاف مؤقت",
-    "blog.stop": "إيقاف",
-    "cookies.settings": "إعدادات ملفات تعريف الارتباط",
   },
   es: {
     "nav.home": "Inicio",
@@ -113,13 +81,21 @@ const DICT: Record<Lang, Dict> = {
     "blog.listen": "Escuchar",
     "blog.pause": "Pausar",
     "blog.stop": "Detener",
+    "blog.back": "Blog",
+    "blog.others": "Otros artículos",
+    "blog.playing": "Reproduciendo…",
+    "blog.paused": "En pausa",
+    "blog.notfound": "Artículo no encontrado",
+    "blog.backToBlog": "Volver al blog",
     "cookies.settings": "Configuración de cookies",
   },
 };
 
 const KEY = "eqnovia-lang";
+export const LANG_CODES: Lang[] = ["fr", "en", "es"];
+export const LOCALE_MAP: Record<Lang, string> = { fr: "fr-FR", en: "en-US", es: "es-ES" };
 
-type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string; dir: "ltr" | "rtl" };
+type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string; dir: "ltr" };
 const LanguageContext = createContext<Ctx | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -127,14 +103,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? (window.localStorage.getItem(KEY) as Lang | null) : null;
-    if (stored && ["fr", "en", "zh", "ar", "es"].includes(stored)) setLangState(stored);
+    if (stored && LANG_CODES.includes(stored)) setLangState(stored);
   }, []);
 
   useEffect(() => {
-    const dir = lang === "ar" ? "rtl" : "ltr";
     if (typeof document !== "undefined") {
       document.documentElement.lang = lang;
-      document.documentElement.dir = dir;
+      document.documentElement.dir = "ltr";
     }
   }, [lang]);
 
@@ -144,9 +119,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (k: string) => DICT[lang][k] ?? DICT.fr[k] ?? k;
-  const dir = lang === "ar" ? "rtl" : "ltr";
 
-  return <LanguageContext.Provider value={{ lang, setLang, t, dir }}>{children}</LanguageContext.Provider>;
+  return <LanguageContext.Provider value={{ lang, setLang, t, dir: "ltr" }}>{children}</LanguageContext.Provider>;
 }
 
 export function useLang() {
