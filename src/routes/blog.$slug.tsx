@@ -23,14 +23,8 @@ export const Route = createFileRoute("/blog/$slug")({
     return { post };
   },
   component: ArticlePage,
-  notFoundComponent: () => (
-    <SiteLayout>
-      <div className="container-eq py-24 text-center">
-        <h1 className="text-3xl font-semibold">Article introuvable</h1>
-        <Link to="/blog" className="btn-primary hover:btn-primary-hover mt-6">Retour au blog</Link>
-      </div>
-    </SiteLayout>
-  ),
+  notFoundComponent: () => <ArticleNotFound />,
+
 });
 
 function ArticlePage() {

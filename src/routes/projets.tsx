@@ -5,6 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import projAgadir from "@/assets/project-agadir.jpg";
 import projCasa from "@/assets/project-casablanca.jpg";
 import heroImg from "@/assets/hero-solar.jpg";
+import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/projets")({
   head: () => ({
@@ -16,57 +17,157 @@ export const Route = createFileRoute("/projets")({
   component: ProjectsPage,
 });
 
-const PROJECTS = [
-  {
-    img: projAgadir,
-    location: "Agadir, Maroc",
-    title: "Centrale toiture agro-industrielle",
-    sector: "Agro-industrie",
-    power: "1.2 MWc",
-    savings: "38%",
-    roi: "5.2 ans",
-    desc: "Centrale photovoltaïque en toiture couvrant les besoins électriques d'une unité de conditionnement agricole.",
+const COPY = {
+  fr: {
+    kicker: "Nos réalisations",
+    title: "Des projets, des chiffres, des impacts.",
+    intro:
+      "Découvrez une sélection de centrales conçues, installées et exploitées par nos équipes à travers le Maroc et l'Afrique.",
+    statPower: "Puissance",
+    statSavings: "Économies",
+    statRoi: "ROI",
+    ctaTitle: "Le prochain projet, c'est le vôtre ?",
+    ctaBtn: "Démarrer mon projet",
+    projects: [
+      {
+        img: projAgadir,
+        location: "Agadir, Maroc",
+        title: "Centrale toiture agro-industrielle",
+        sector: "Agro-industrie",
+        power: "1.2 MWc",
+        savings: "38%",
+        roi: "5.2 ans",
+        desc: "Centrale photovoltaïque en toiture couvrant les besoins électriques d'une unité de conditionnement agricole.",
+      },
+      {
+        img: projCasa,
+        location: "Casablanca, Maroc",
+        title: "Ombrière logistique",
+        sector: "Logistique",
+        power: "2.5 MWc",
+        savings: "42%",
+        roi: "4.8 ans",
+        desc: "Ombrière solaire sur parking d'entrepôt logistique avec système de suivi de production en temps réel.",
+      },
+      {
+        img: heroImg,
+        location: "Sud du Maroc",
+        title: "Centrale au sol industrielle",
+        sector: "Industrie",
+        power: "5.0 MWc",
+        savings: "48%",
+        roi: "4.5 ans",
+        desc: "Grande centrale photovoltaïque au sol dédiée à un site industriel avec BESS de 2 MWh.",
+      },
+    ],
   },
-  {
-    img: projCasa,
-    location: "Casablanca, Maroc",
-    title: "Ombrière logistique",
-    sector: "Logistique",
-    power: "2.5 MWc",
-    savings: "42%",
-    roi: "4.8 ans",
-    desc: "Ombrière solaire sur parking d'entrepôt logistique avec système de suivi de production en temps réel.",
+  en: {
+    kicker: "Our achievements",
+    title: "Projects, numbers, impact.",
+    intro:
+      "Discover a selection of plants designed, installed and operated by our teams across Morocco and Africa.",
+    statPower: "Power",
+    statSavings: "Savings",
+    statRoi: "ROI",
+    ctaTitle: "Is the next project yours?",
+    ctaBtn: "Start my project",
+    projects: [
+      {
+        img: projAgadir,
+        location: "Agadir, Morocco",
+        title: "Agro-industrial rooftop plant",
+        sector: "Agro-industry",
+        power: "1.2 MWp",
+        savings: "38%",
+        roi: "5.2 years",
+        desc: "Rooftop photovoltaic plant covering the electricity needs of an agricultural packaging unit.",
+      },
+      {
+        img: projCasa,
+        location: "Casablanca, Morocco",
+        title: "Logistics canopy",
+        sector: "Logistics",
+        power: "2.5 MWp",
+        savings: "42%",
+        roi: "4.8 years",
+        desc: "Solar canopy over a logistics warehouse parking lot with real-time production monitoring.",
+      },
+      {
+        img: heroImg,
+        location: "Southern Morocco",
+        title: "Industrial ground-mounted plant",
+        sector: "Industry",
+        power: "5.0 MWp",
+        savings: "48%",
+        roi: "4.5 years",
+        desc: "Large ground-mounted photovoltaic plant dedicated to an industrial site with a 2 MWh BESS.",
+      },
+    ],
   },
-  {
-    img: heroImg,
-    location: "Sud du Maroc",
-    title: "Centrale au sol industrielle",
-    sector: "Industrie",
-    power: "5.0 MWc",
-    savings: "48%",
-    roi: "4.5 ans",
-    desc: "Grande centrale photovoltaïque au sol dédiée à un site industriel avec BESS de 2 MWh.",
+  es: {
+    kicker: "Nuestros logros",
+    title: "Proyectos, cifras, impacto.",
+    intro:
+      "Descubra una selección de plantas diseñadas, instaladas y operadas por nuestros equipos en Marruecos y África.",
+    statPower: "Potencia",
+    statSavings: "Ahorros",
+    statRoi: "ROI",
+    ctaTitle: "¿El próximo proyecto es el suyo?",
+    ctaBtn: "Iniciar mi proyecto",
+    projects: [
+      {
+        img: projAgadir,
+        location: "Agadir, Marruecos",
+        title: "Planta en techo agroindustrial",
+        sector: "Agroindustria",
+        power: "1.2 MWp",
+        savings: "38%",
+        roi: "5.2 años",
+        desc: "Planta fotovoltaica en techo que cubre las necesidades eléctricas de una unidad de envasado agrícola.",
+      },
+      {
+        img: projCasa,
+        location: "Casablanca, Marruecos",
+        title: "Sombrilla logística",
+        sector: "Logística",
+        power: "2.5 MWp",
+        savings: "42%",
+        roi: "4.8 años",
+        desc: "Sombrilla solar sobre el estacionamiento de un almacén logístico con seguimiento de producción en tiempo real.",
+      },
+      {
+        img: heroImg,
+        location: "Sur de Marruecos",
+        title: "Planta en suelo industrial",
+        sector: "Industria",
+        power: "5.0 MWp",
+        savings: "48%",
+        roi: "4.5 años",
+        desc: "Gran planta fotovoltaica en suelo dedicada a un sitio industrial con BESS de 2 MWh.",
+      },
+    ],
   },
-];
+} as const;
 
 function ProjectsPage() {
+  const { lang } = useLang();
+  const c = COPY[lang];
   return (
     <SiteLayout>
       <section className="container-eq pt-16 pb-16 lg:pt-24">
         <Reveal>
-          <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">Nos réalisations</p>
+          <p className="text-brand font-semibold text-sm uppercase tracking-widest mb-4">{c.kicker}</p>
           <h1 className="text-[36px] lg:text-[56px] font-semibold leading-[1.05] max-w-3xl">
-            Des projets, des chiffres, des impacts.
+            {c.title}
           </h1>
           <p className="mt-6 text-base text-muted-foreground max-w-2xl">
-            Découvrez une sélection de centrales conçues, installées et exploitées par nos équipes
-            à travers le Maroc et l'Afrique.
+            {c.intro}
           </p>
         </Reveal>
       </section>
 
       <section className="container-eq pb-24 grid gap-8">
-        {PROJECTS.map((p, i) => (
+        {c.projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 120}>
             <article className="rounded-3xl overflow-hidden border border-border bg-card grid lg:grid-cols-2 hover:shadow-elegant transition-all duration-500">
               <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
@@ -86,9 +187,9 @@ function ProjectsPage() {
                 <p className="mt-4 text-muted-foreground leading-relaxed">{p.desc}</p>
 
                 <div className="mt-auto pt-8 grid grid-cols-3 gap-4 border-t border-border">
-                  <Stat icon={Zap} label="Puissance" value={p.power} />
-                  <Stat icon={TrendingDown} label="Économies" value={p.savings} />
-                  <Stat icon={Clock} label="ROI" value={p.roi} />
+                  <Stat icon={Zap} label={c.statPower} value={p.power} />
+                  <Stat icon={TrendingDown} label={c.statSavings} value={p.savings} />
+                  <Stat icon={Clock} label={c.statRoi} value={p.roi} />
                 </div>
               </div>
             </article>
@@ -98,8 +199,8 @@ function ProjectsPage() {
 
       <section className="container-eq pb-24 text-center">
         <Reveal>
-          <h2 className="text-[28px] lg:text-[40px] font-semibold">Le prochain projet, c'est le vôtre ?</h2>
-          <Link to="/contact" className="btn-primary hover:btn-primary-hover mt-8">Démarrer mon projet</Link>
+          <h2 className="text-[28px] lg:text-[40px] font-semibold">{c.ctaTitle}</h2>
+          <Link to="/contact" className="btn-primary hover:btn-primary-hover mt-8">{c.ctaBtn}</Link>
         </Reveal>
       </section>
     </SiteLayout>
