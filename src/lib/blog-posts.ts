@@ -14,15 +14,22 @@ export type BlogPost = {
   i18n?: Partial<Record<Exclude<LangCode, "fr">, LocalizedText>>;
 };
 
+import { PART1 } from "./blog-content.part1";
+import { PART2 } from "./blog-content.part2";
+import { PART3 } from "./blog-content.part3";
+
+const CONTENT_I18N: Record<string, { en: string; es: string }> = { ...PART1, ...PART2, ...PART3 };
+
 export function localizePost(post: BlogPost, lang: LangCode): { title: string; excerpt: string; content: string } {
   if (lang === "fr") return { title: post.title, excerpt: post.excerpt, content: post.content };
   const tr = TRANSLATIONS[post.slug]?.[lang];
   return {
     title: tr?.title ?? post.title,
     excerpt: tr?.excerpt ?? post.excerpt,
-    content: tr?.content ?? post.content,
+    content: tr?.content ?? CONTENT_I18N[post.slug]?.[lang] ?? post.content,
   };
 }
+
 
 import projAgadir from "@/assets/project-agadir.jpg";
 import projCasa from "@/assets/project-casablanca.jpg";
