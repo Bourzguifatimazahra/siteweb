@@ -95,7 +95,7 @@ function ArticlePage() {
         >
           <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString(LOCALE_MAP[lang])}</span>
           <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
-          <span>· {post.author}</span>
+          <span>· {lang === "fr" ? post.author : lang === "es" ? "Equipo Eqnovia" : "Eqnovia Team"}</span>
         </motion.div>
 
         <motion.h1
