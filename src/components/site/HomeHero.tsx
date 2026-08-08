@@ -158,7 +158,7 @@ export function HomeHero() {
             )}
 
             <h1
-              className="font-semibold leading-[1.02] tracking-tight text-[40px] sm:text-[56px] lg:text-[72px]"
+              className="font-semibold leading-[1.02] tracking-tight text-[40px] sm:text-[56px] lg:text-[72px] text-white"
               style={{ textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}
             >
               <span className="block">{current.title[0]}</span>
