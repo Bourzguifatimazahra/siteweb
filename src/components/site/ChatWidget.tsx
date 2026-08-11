@@ -35,6 +35,24 @@ const COPY = {
       "¿Sus referencias en Marruecos?",
     ],
   },
+  zh: {
+    online: "● 在线",
+    questions: [
+      "你们提供哪些服务？",
+      "如何获取报价？",
+      "请介绍一下 BESS 储能",
+      "你们在摩洛哥有哪些参考项目？",
+    ],
+  },
+  ar: {
+    online: "● متصل",
+    questions: [
+      "ما هي خدماتكم؟",
+      "كيف أحصل على عرض سعر؟",
+      "حدثني عن تخزين الطاقة BESS",
+      "ما هي مراجعكم في المغرب؟",
+    ],
+  },
 } as const;
 
 const transport = new DefaultChatTransport({ api: "/api/chat" });
@@ -62,7 +80,7 @@ export function ChatWidget() {
     e.preventDefault();
     const text = input.trim();
     if (!text || isLoading) return;
-    sendMessage({ text });
+    sendMessage({ text }, { body: { lang } });
     setInput("");
   };
 
@@ -122,7 +140,7 @@ export function ChatWidget() {
                     {c.questions.map((q) => (
                       <button
                         key={q}
-                        onClick={() => sendMessage({ text: q })}
+                        onClick={() => sendMessage({ text: q }, { body: { lang } })}
                         className="text-xs rounded-full border border-border bg-background px-3 py-1.5 hover:border-brand hover:text-brand transition-colors"
                       >
                         {q}

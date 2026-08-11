@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Calendar, Clock, Play, Pause, Square, Volume2 } from "lucide-react";
 import { motion } from "motion/react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { getPost, POSTS, localizePost } from "@/lib/blog-posts";
+import { getPost, POSTS, localizePost, type BlogPost } from "@/lib/blog-posts";
 import { useLang, LOCALE_MAP } from "@/lib/i18n";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/blog/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): { post: BlogPost } => {
     const post = getPost(params.slug);
     if (!post) throw notFound();
     return { post };

@@ -1,5 +1,23 @@
-export const PART1: Record<string, { en: string; es: string }> = {
+export const PART1: Record<string, Partial<Record<"en" | "es" | "zh" | "ar", string>>> = {
   "ombrieres-photovoltaiques-parking": {
+    zh: `企业停车场是一片可利用、开阔且朝向理想的空间。为其安装光伏遮阳棚，可以在不占用额外土地面积的情况下生产电力。
+
+在我们近期的项目中，一个可容纳300个车位的遮阳棚覆盖约600千瓦峰值功率，即每年近100万千瓦时的发电量。这些电力优先供应给相邻建筑物，并在适用情况下为电动汽车充电桩供电。
+
+效益立竿见影：车辆免受高温和恶劣天气的侵袭，员工获得更舒适的热环境，同时向客户和投资者传递出该场所对环境承诺的强烈信号。
+
+从技术上讲，结构根据当地的风荷载和雪荷载进行设计，基础则根据土壤性质进行调整。我们的工程师会提前完成结构研究和发电量研究，然后再确认并网方案。
+
+在Eqnovia，遮阳棚采用交钥匙方式交付：设计、土建工程、结构、组件、逆变器、并网、调试和维护。免费的可行性研究可以精确评估您停车场的发电潜力。`,
+    ar: `موقف سيارات الشركة هو مساحة متاحة وخالية من العوائق وذات توجه مثالي. تجهيزه بمظلات كهروضوئية يتيح إنتاج الكهرباء دون استهلاك أي متر مربع إضافي من الأرض.
+
+في مشاريعنا الأخيرة، تغطي مظلة بـ300 موقف سيارات ما يقارب 600 كيلوواط ذروة، أي ما يقرب من مليون كيلوواط ساعة سنويًا. يغذي هذا الإنتاج بشكل أساسي المباني المجاورة، وعند الاقتضاء، محطات شحن السيارات الكهربائية.
+
+الفوائد فورية: مركبات محمية من الحرارة وسوء الأحوال الجوية، راحة حرارية للموظفين، وإشارة قوية موجهة إلى العملاء والمستثمرين على حد سواء بشأن الالتزام البيئي للموقع.
+
+من الناحية التقنية، يتم تصميم الهيكل وفقًا لأحمال الرياح والثلوج المحلية، مع أساسات ملائمة لطبيعة التربة. تُنجز الدراسة الهيكلية ودراسة الإنتاج مسبقًا من قبل مهندسينا، قبل التحقق من ملف الربط بالشبكة.
+
+في Eqnovia، تُسلَّم المظلة جاهزة بالكامل: التصميم، الأعمال المدنية، الهيكل، الألواح، العاكسات، الربط بالشبكة، التشغيل والصيانة. تتيح دراسة مجانية تقدير إمكانات موقف سياراتكم بدقة.`,
     en: `A company parking lot is available, clear, and perfectly oriented space. Fitting it with photovoltaic canopies makes it possible to produce electricity without using an extra square meter of land.
 
 On our recent projects, a 300-space canopy covers around 600 kilowatts-peak, or nearly one million kilowatt-hours per year. This production primarily powers the adjacent buildings and, where applicable, electric vehicle charging stations.
@@ -20,6 +38,24 @@ Técnicamente, la estructura se dimensiona según las cargas de viento y nieve l
 En Eqnovia, la marquesina se entrega llave en mano: diseño, obra civil, estructura, módulos, inversores, conexión a red, puesta en marcha y mantenimiento. Un estudio gratuito permite calcular con precisión el potencial de su aparcamiento.`,
   },
   "data-centers-energie-verte": {
+    zh: `数据中心是耗电量最大、对服务连续性要求最高的用户之一。在摩洛哥乃至整个非洲，其快速发展带来了双重挑战：能源成本和碳足迹。
+
+光伏太阳能与电池储能系统相结合，可以同时应对这两个问题。白天的发电量可以覆盖相当一部分基础负荷，而储能系统（BESS）则可以平抑用电峰值，并在电网中断时保障过渡供电的安全。
+
+我们的方案将光伏电站、储能系统、备用发电机组和统一的能源监控系统结合在一起。目标是在保持最高可用性的同时，降低每千瓦时的平均成本。
+
+商业角度的理由同样具有决定性：大型云计算客户如今要求其自身的碳核算具备可再生能源来源保证。因此，采用太阳能供电的数据中心在招标中更具竞争力。
+
+Eqnovia负责进行负荷审计、发电量建模和储能系统设计，并长期负责运营和维护。`,
+    ar: `تُعد مراكز البيانات من بين أكثر المستهلكين كثافة للكهرباء وأكثرها تطلبًا من حيث استمرارية الخدمة. في المغرب وفي أفريقيا، يطرح تطورها السريع إشكالية مزدوجة: تكلفة الطاقة والبصمة الكربونية.
+
+تستجيب الطاقة الشمسية الكهروضوئية، مقترنة بنظام تخزين بالبطاريات، لكلا التحديين. يغطي الإنتاج النهاري جزءًا مهمًا من الحمل الأساسي، بينما يعمل نظام تخزين الطاقة بالبطاريات (BESS) على تسوية الذروات وتأمين الانتقالات في حال انقطاع الشبكة.
+
+تجمع هندساتنا بين محطة كهروضوئية، ونظام تخزين، ومولدات احتياطية، وإشراف موحد على الطاقة. الهدف هو خفض متوسط تكلفة الكيلوواط ساعة مع الحفاظ على أقصى قدر من التوافر.
+
+الحجة التجارية حاسمة أيضًا: يطالب كبار عملاء الحوسبة السحابية اليوم بضمانات المصدر المتجدد لحساباتهم الكربونية الخاصة. وهكذا يصبح مركز البيانات المشغَّل بالطاقة الشمسية أكثر تنافسية في المناقصات.
+
+تُجري Eqnovia تدقيق الأحمال، ونمذجة الإنتاج، وتصميم نظام التخزين، ثم تتولى التشغيل والصيانة على المدى الطويل.`,
     en: `Data centers are among the most electricity-intensive consumers and among the most demanding in terms of service continuity. In Morocco and across Africa, their rapid growth raises a dual challenge: energy cost and carbon footprint.
 
 Solar photovoltaics, combined with a battery storage system, addresses both. Daytime production covers a significant share of the base load, while the BESS smooths peaks and secures transitions in the event of a grid outage.
@@ -40,6 +76,24 @@ El argumento comercial también es determinante: los grandes clientes del cloud 
 Eqnovia realiza la auditoría de carga, el modelado de la producción y el dimensionamiento del almacenamiento, y después se encarga de la explotación y el mantenimiento a lo largo del tiempo.`,
   },
   "financement-vert-projets-solaires": {
+    zh: `工业企业提到的第一个障碍并非技术问题，而是融资问题。好消息是：现有的融资方案已经大大多样化。
+
+从长期来看，自筹资金仍然是最具盈利性的方式：企业可获得全部节省的费用，并将该资产计入资产负债表。投资回报期通常为四到六年，而使用寿命超过二十五年。
+
+长期租赁可以将财务负担分摊为运营支出，而无需前期资金投入。购电协议（PPA）则更进一步：Eqnovia负责融资、安装和运营电站，您只需按低于电网电价且合同规定的稳定价格购买所产生的电量。
+
+此外，国际出资机构和摩洛哥各银行提供的绿色信贷额度也在不断增加，通常伴有优惠条件以及针对技术研究的补贴。
+
+我们的团队会根据您的用电情况、负债能力和会计考量，为您比较各种方案，并提供一份为期二十五年的详细商业计划书。`,
+    ar: `العائق الأول الذي يذكره الصناعيون ليس التكنولوجيا، بل التمويل. والخبر السار هو أن هياكل التمويل المتاحة تنوعت بشكل كبير.
+
+يظل التمويل الذاتي الأكثر ربحية على المدى الطويل: تستفيد الشركة من كامل الوفورات وتُدرج الأصل في ميزانيتها. يتراوح العائد على الاستثمار عمومًا بين أربع وست سنوات، مقابل عمر تشغيلي يتجاوز خمسًا وعشرين سنة.
+
+يتيح الإيجار طويل الأجل توزيع الجهد المالي على شكل نفقات تشغيلية، دون أي تجميد رأسمالي أولي. أما عقد شراء الكهرباء (PPA) فيذهب أبعد من ذلك: تقوم Eqnovia بتمويل المحطة وتركيبها وتشغيلها، وأنتم تشترون فقط الكيلوواط ساعة المنتَج، بتعرفة أقل من سعر الشبكة وثابتة تعاقديًا.
+
+يُضاف إلى ذلك خطوط الائتمان الأخضر التي تقدمها الجهات المانحة الدولية والبنوك المغربية، والتي غالبًا ما تكون مصحوبة بشروط تفضيلية ودعم للدراسة التقنية.
+
+يقارن فريقنا لكم مختلف السيناريوهات بناءً على نمط استهلاككم، وقدرتكم على الاستدانة، وأفقكم المحاسبي، ثم يقدم خطة عمل مفصلة على مدى خمس وعشرين سنة.`,
     en: `The first obstacle mentioned by industrial companies is not technology, but financing. Good news: the financing structures available have diversified considerably.
 
 Self-financing remains the most profitable option over time: the company captures all of the savings and records the asset on its balance sheet. The return on investment is generally between four and six years, for a useful life of over twenty-five years.
@@ -60,6 +114,26 @@ A esto se añaden las líneas de crédito verde impulsadas por los organismos in
 Nuestro equipo compara para usted los escenarios en función de su perfil de consumo, su capacidad de endeudamiento y su horizonte contable, y presenta después un plan de negocio detallado a veinticinco años.`,
   },
   "autoconsommation-solaire-maroc": {
+    zh: `摩洛哥在其能源转型中迈出了决定性的一步。随着82-21号法律实施法令的公布，摩洛哥企业如今可以在清晰、安全的法律框架内自行生产和消费太阳能电力。
+
+具体而言，位于卡萨布兰卡或阿加迪尔的工厂可以在屋顶或停车场安装光伏电站，将多余电量输送至ONEE电网，并享受补偿机制。我们近期项目观察到的节省幅度达到年用电账单的35%至45%。
+
+安装一座500千瓦峰值的电站每年可减少约700吨二氧化碳排放，同时提供平均四到六年的投资回报期。在Eqnovia，我们从可行性研究到运营阶段全程陪伴客户，并持续跟踪其性能表现。
+
+需要记住的关键点：
+无需事先授权的自产电量门槛已被提高。接入中压电网的工业企业如今可以覆盖其大部分用电需求。在欧洲投资银行和摩洛哥各机构的推动下，绿色融资渠道正不断增多。
+
+总而言之，2026年标志着太阳能对于任何关注自身竞争力和环境影响的企业而言，成为一项显而易见的战略选择的一年。`,
+    ar: `يخطو المغرب خطوة حاسمة في تحوله الطاقي. مع نشر مراسيم تطبيق القانون 82-21، أصبح بإمكان الشركات المغربية الآن إنتاج واستهلاك كهربائها الشمسي الخاص ضمن إطار قانوني واضح وآمن.
+
+عمليًا، يمكن لمصنع في الدار البيضاء أو أكادير تركيب محطة كهروضوئية على السطح أو في شكل مظلة، وضخ الفائض في شبكة المكتب الوطني للكهرباء والماء الصالح للشرب، والاستفادة من آلية للمقاصة. تصل الوفورات الملاحظة في مشاريعنا الأخيرة إلى ما بين 35 و45 بالمئة من فاتورة الكهرباء السنوية.
+
+يتيح تركيب محطة بقدرة 500 كيلوواط ذروة تجنب حوالي 700 طن من ثاني أكسيد الكربون سنويًا، مع تحقيق عائد استثمار متوسط يتراوح بين أربع وست سنوات. في Eqnovia، نرافق عملاءنا من دراسة الجدوى إلى مرحلة التشغيل، مع متابعة مستمرة للأداء.
+
+النقاط الأساسية التي يجب تذكرها:
+تم رفع عتبة الإنتاج الذاتي التي لا تتطلب ترخيصًا مسبقًا. أصبح بإمكان الصناعيين المرتبطين بالتوتر المتوسط تغطية معظم احتياجاتهم. تتضاعف التمويلات الخضراء، مدفوعة بالبنك الأوروبي للاستثمار والمؤسسات المغربية.
+
+باختصار، تمثل سنة 2026 السنة التي تصبح فيها الطاقة الشمسية خيارًا استراتيجيًا بديهيًا لكل شركة مهتمة بتنافسيتها وأثرها البيئي.`,
     en: `Morocco is taking a decisive step in its energy transition. With the publication of the implementing decrees of Law 82-21, Moroccan companies can now produce and consume their own solar electricity within a clear and secure legal framework.
 
 In practical terms, a factory in Casablanca or Agadir can install a photovoltaic plant on its roof or as a canopy, feed any surplus into the ONEE grid, and benefit from a compensation mechanism. The savings observed on our recent projects reach 35 to 45 percent of the annual electricity bill.
@@ -82,6 +156,24 @@ El umbral de autoproducción sin autorización previa ha sido elevado. Los indus
 En resumen, 2026 marca el año en que la energía solar se convierte en una opción estratégica evidente para toda empresa preocupada por su competitividad y su impacto medioambiental.`,
   },
   "stockage-bess-industriel": {
+    zh: `电池储能系统（BESS）已不再是一种未来构想的选择。如今，它是让太阳能真正实现工业化应用不可或缺的一环。
+
+现代BESS系统依赖磷酸铁锂电池，因其安全性和长寿命而备受青睐。与光伏电站结合使用，它们可以平滑发电曲线，保障关键负荷的用电安全，并大幅降低电价高峰时段的用电成本。
+
+在我们近期的非洲项目中，我们观察到停电次数减少了超过80%，柴油发电机的使用量减少了约90%。其经济影响十分显著：燃料消耗减少、维护成本降低，碳足迹大幅下降。
+
+一个设计合理的BESS系统集成了双向逆变器、智能管理系统和远程监控功能。在Eqnovia，我们的工程师会根据气候条件、电网状况和运营优先事项，为每种用电情况设计相应的系统架构。
+
+非洲的能源未来正是建立在储能技术之上。它是全天候提供可靠、清洁、具有竞争力电力的保障。`,
+    ar: `لم يعد تخزين الطاقة بالبطاريات، أو BESS، خيارًا مستقبليًا. إنه اليوم اللبنة المفقودة التي تجعل الطاقة الشمسية صناعية بالكامل.
+
+تعتمد أنظمة BESS الحديثة على بطاريات فوسفات حديد الليثيوم، المعروفة بأمانها وطول عمرها. مقترنة بمحطة كهروضوئية، تتيح هذه الأنظمة تسوية الإنتاج، وتأمين الأحمال الحرجة، وخفض ذروات التعرفة بشكل كبير.
+
+في مشاريعنا الأفريقية الأخيرة، لاحظنا انخفاضًا في انقطاعات التيار الكهربائي بأكثر من 80 بالمئة، وانخفاضًا في اللجوء إلى المولدات الكهربائية العاملة بالديزل بنسبة تقارب 90 بالمئة. الأثر الاقتصادي كبير: وقود أقل، صيانة أقل، وبصمة كربونية في انخفاض حاد.
+
+يدمج نظام BESS المصمم جيدًا عاكسًا ثنائي الاتجاه، ونظام إدارة ذكي، وإشرافًا عن بعد. في Eqnovia، يصمم مهندسونا هياكل ملائمة لكل نمط استهلاك، مع مراعاة المناخ والشبكة والأولويات التشغيلية.
+
+يُبنى مستقبل الطاقة في أفريقيا بواسطة التخزين. إنه ضمان لكهرباء موثوقة ونظيفة وتنافسية على مدار 24 ساعة.`,
     en: `Battery energy storage, or BESS, is no longer a futuristic option. Today it is the missing piece that makes solar fully industrial-grade.
 
 Modern BESS systems rely on lithium iron phosphate batteries, known for their safety and longevity. Combined with a photovoltaic plant, they make it possible to smooth production, secure critical loads, and drastically reduce tariff peaks.
@@ -102,6 +194,24 @@ Un sistema BESS bien dimensionado integra un inversor bidireccional, un sistema 
 El futuro energético de África se construye con el almacenamiento. Es la garantía de una electricidad fiable, limpia y competitiva, las 24 horas del día.`,
   },
   "ombrieres-solaires-logistique": {
+    zh: `光伏遮阳棚将一个原本闲置的空间——停车场，转变为一流的能源资产。一座面积达5000平方米的遮阳棚每年可发电超过1吉瓦时，同时为停放车辆提供舒适和保护。
+
+对于现代物流中心而言，这种双重功能是一项战略优势。车辆内部温度可降低数摄氏度，从而减少空调用电；团队工作效率得以提升，企业形象也因这一可见的环保承诺而得到加强。
+
+从技术层面看，遮阳棚依靠经过热镀锌处理的金属结构，该结构经过设计以抵御摩洛哥当地的风力和气候荷载。现代双面光伏组件的转换效率超过22%。整套系统根据功率大小，通过组串式或集中式逆变器接入配电站。
+
+太阳能遮阳棚的投资回报期通常在五到七年之间，使用寿命超过25年。它既是一项能源投资，也是一项资产投资。
+
+在Eqnovia，我们设计的遮阳棚兼具美观性和坚固性，并完美融入物流和商业场所的建筑风格之中。`,
+    ar: `تحوّل المظلات الكهروضوئية مساحة خاملة، وهي موقف السيارات، إلى أصل طاقي من الدرجة الأولى. يمكن لمظلة بمساحة 5000 متر مربع أن تنتج أكثر من غيغاواط ساعة واحد سنويًا، مع توفير الراحة والحماية للمركبات المتوقفة.
+
+بالنسبة لمركز لوجستي حديث، تشكل هذه الوظيفة المزدوجة ميزة استراتيجية. تنخفض درجة الحرارة الداخلية للمركبات بعدة درجات، مما يقلل من استهلاك التكييف. تتحسن إنتاجية الفرق، وتتعزز صورة الشركة بفضل التزام بيئي واضح للعيان.
+
+من الناحية التقنية، تعتمد المظلة على هيكل معدني مجلفن مصمم لمقاومة الرياح والأحمال المناخية المغربية. توفر الألواح الكهروضوئية الثنائية الوجه الحديثة مردودية تتجاوز 22 بالمئة. تُربط المنظومة بمحطة التسليم عبر عاكسات من نوع سلسلة أو مركزية حسب القدرة.
+
+يتراوح عائد الاستثمار في مظلة شمسية عمومًا بين خمس وسبع سنوات، مع عمر تشغيلي يتجاوز 25 سنة. إنه استثمار عقاري بقدر ما هو استثمار طاقي.
+
+في Eqnovia، نصمم مظلات أنيقة، متينة، ومندمجة بشكل مثالي في هندسة المواقع اللوجستية والتجارية.`,
     en: `Photovoltaic canopies turn a passive space, the parking lot, into a first-class energy asset. A 5,000-square-meter canopy can produce more than one gigawatt-hour per year, while offering comfort and protection to parked vehicles.
 
 For a modern logistics center, this dual function is a strategic asset. The interior temperature of vehicles drops by several degrees, which reduces air-conditioning consumption. Team productivity improves, and the company's image is strengthened through a visible environmental commitment.

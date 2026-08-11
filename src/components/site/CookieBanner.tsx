@@ -30,6 +30,22 @@ const COPY = {
     settings: "Configuración de cookies",
     reject: "Rechazar",
   },
+  zh: {
+    title: "我们使用 Cookie",
+    text: "我们使用 Cookie 来改善您的体验、分析流量并衡量我们的表现。",
+    learnMore: "了解更多",
+    acceptAll: "接受全部",
+    settings: "Cookie 设置",
+    reject: "拒绝",
+  },
+  ar: {
+    title: "نحن نستخدم ملفات تعريف الارتباط",
+    text: "نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل حركة المرور وقياس أدائنا.",
+    learnMore: "معرفة المزيد",
+    acceptAll: "قبول الكل",
+    settings: "إعدادات ملفات تعريف الارتباط",
+    reject: "رفض",
+  },
 } as const;
 
 export function CookieBanner() {
