@@ -7,7 +7,7 @@ const SYSTEM = `Tu es l'assistant virtuel officiel d'**Eqnovia**, expert marocai
 ## Ton style
 - **Professionnel, courtois, chaleureux** — jamais familier.
 - **Concis** : réponses courtes, structurées en markdown (titres ###, listes à puces, gras pour les mots-clés).
-- Réponds toujours dans la langue de l'utilisateur (FR par défaut, EN, ES, 中文, AR).
+- Réponds toujours dans la langue de l'utilisateur (FR par défaut, EN, ES, 中文 (zh), العربية (ar)).
 - Ne jamais inventer de prix ou chiffres précis : renvoie vers l'équipe commerciale pour un devis.
 
 ## Offre Eqnovia (clé en main)
@@ -35,17 +35,31 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const { messages } = (await request.json()) as { messages?: UIMessage[] };
+        const { messages, lang } = (await request.json()) as {
+          messages?: UIMessage[];
+          lang?: "fr" | "en" | "es" | "zh" | "ar";
+        };
         if (!Array.isArray(messages)) {
           return new Response("Messages required", { status: 400 });
         }
         const key = process.env.LOVABLE_API_KEY;
         if (!key) return new Response("Missing LOVABLE_API_KEY", { status: 500 });
 
+        const LANG_NAMES: Record<string, string> = {
+          fr: "français",
+          en: "English",
+          es: "español",
+          zh: "中文 (简体中文)",
+          ar: "العربية (الفصحى)",
+        };
+        const system = lang && LANG_NAMES[lang]
+          ? `${SYSTEM}\n\n## Langue de réponse\nRéponds impérativement en ${LANG_NAMES[lang]}, quelle que soit la langue du message précédent, sauf si l'utilisateur écrit explicitement dans une autre langue.`
+          : SYSTEM;
+
         const gateway = createLovableAiGatewayProvider(key);
         const result = streamText({
           model: gateway("google/gemini-3-flash-preview"),
-          system: SYSTEM,
+          system,
           messages: await convertToModelMessages(messages),
         });
         return result.toUIMessageStreamResponse({ originalMessages: messages });
