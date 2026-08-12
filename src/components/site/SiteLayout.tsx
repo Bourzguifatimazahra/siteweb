@@ -5,12 +5,11 @@ import { CookieBanner } from "./CookieBanner";
 import { PageLoader } from "./PageLoader";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { ChatWidget } from "./ChatWidget";
-import { LanguageProvider } from "@/lib/i18n";
 import { Toaster } from "@/components/ui/sonner";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <LanguageProvider>
+    <>
       <PageLoader />
       <Header />
       <main className="pt-20">{children}</main>
@@ -19,6 +18,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <WhatsAppButton />
       <ChatWidget />
       <Toaster position="top-center" />
-    </LanguageProvider>
+    </>
   );
 }
