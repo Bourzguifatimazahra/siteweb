@@ -1,36 +1,27 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/eqnovia-logo.png.asset.json";
 
-const SEEN_KEY = "eqnovia-loader-seen";
+// Vrai uniquement au premier montage après un chargement/rafraîchissement de page.
+let shownForThisLoad = false;
 
 export function PageLoader() {
-  // Le loader ne s'affiche qu'une seule fois par session (navigation instantanée ensuite)
-  const [gone, setGone] = useState(false);
+  // S'affiche 3s à chaque rechargement de page, pas lors des navigations internes
+  const [gone, setGone] = useState(() => shownForThisLoad);
   const [hidden, setHidden] = useState(false);
-  const [active, setActive] = useState(false);
 
   useEffect(() => {
-    let already = true;
-    try {
-      already = sessionStorage.getItem(SEEN_KEY) === "1";
-      if (!already) sessionStorage.setItem(SEEN_KEY, "1");
-    } catch {
-      already = true;
-    }
-    if (already) {
-      setGone(true);
-      return;
-    }
-    setActive(true);
-    const t1 = setTimeout(() => setHidden(true), 700);
-    const t2 = setTimeout(() => setGone(true), 1000);
+    if (shownForThisLoad) return;
+    shownForThisLoad = true;
+    const t1 = setTimeout(() => setHidden(true), 3000);
+    const t2 = setTimeout(() => setGone(true), 3350);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
     };
   }, []);
 
-  if (gone || !active) return null;
+
+  if (gone) return null;
 
   return (
     <div
