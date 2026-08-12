@@ -28,7 +28,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function ArticlePage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: BlogPost };
   const { t, lang } = useLang();
   const loc = localizePost(post, lang);
   const [state, setState] = useState<"idle" | "playing" | "paused">("idle");
