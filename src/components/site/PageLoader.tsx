@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/eqnovia-logo.png.asset.json";
 
+// Vrai uniquement au premier montage après un chargement/rafraîchissement de page.
+let shownForThisLoad = false;
+
 export function PageLoader() {
-  // S'affiche à chaque rechargement de page pendant 3s (pas lors des navigations internes)
-  const [gone, setGone] = useState(false);
+  // S'affiche 3s à chaque rechargement de page, pas lors des navigations internes
+  const [gone, setGone] = useState(() => shownForThisLoad);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
+    if (shownForThisLoad) return;
+    shownForThisLoad = true;
     const t1 = setTimeout(() => setHidden(true), 3000);
     const t2 = setTimeout(() => setGone(true), 3350);
     return () => {
@@ -14,6 +19,7 @@ export function PageLoader() {
       clearTimeout(t2);
     };
   }, []);
+
 
   if (gone) return null;
 
