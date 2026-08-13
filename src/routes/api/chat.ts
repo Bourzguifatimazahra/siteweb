@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
-import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
+import { createAiGatewayProvider } from "@/lib/ai-gateway.server";
 
 const SYSTEM = `Tu es l'assistant virtuel officiel d'**Eqnovia**, expert marocain des solutions solaires photovoltaïques (C&I) et de stockage d'énergie (BESS) au Maroc et en Afrique.
 
@@ -42,8 +42,8 @@ export const Route = createFileRoute("/api/chat")({
         if (!Array.isArray(messages)) {
           return new Response("Messages required", { status: 400 });
         }
-        const key = process.env.LOVABLE_API_KEY;
-        if (!key) return new Response("Missing LOVABLE_API_KEY", { status: 500 });
+        const key = process.env.AI_GATEWAY_API_KEY;
+        if (!key) return new Response("Missing AI_GATEWAY_API_KEY", { status: 500 });
 
         const LANG_NAMES: Record<string, string> = {
           fr: "français",
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/api/chat")({
           ? `${SYSTEM}\n\n## Langue de réponse\nRéponds impérativement en ${LANG_NAMES[lang]}, quelle que soit la langue du message précédent, sauf si l'utilisateur écrit explicitement dans une autre langue.`
           : SYSTEM;
 
-        const gateway = createLovableAiGatewayProvider(key);
+        const gateway = createAiGatewayProvider(key);
         const result = streamText({
           model: gateway("google/gemini-3-flash-preview"),
           system,

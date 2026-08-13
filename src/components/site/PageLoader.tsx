@@ -5,15 +5,15 @@ import logo from "@/assets/eqnovia-logo.png.asset.json";
 let shownForThisLoad = false;
 
 export function PageLoader() {
-  // S'affiche 3s à chaque rechargement de page, pas lors des navigations internes
+  // S'affiche 8s à chaque rechargement de page, pas lors des navigations internes
   const [gone, setGone] = useState(() => shownForThisLoad);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     if (shownForThisLoad) return;
     shownForThisLoad = true;
-    const t1 = setTimeout(() => setHidden(true), 3000);
-    const t2 = setTimeout(() => setGone(true), 3350);
+    const t1 = setTimeout(() => setHidden(true), 1000);
+    const t2 = setTimeout(() => setGone(true), 1300);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);

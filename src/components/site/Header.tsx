@@ -15,6 +15,7 @@ export function Header() {
     { to: "/a-propos", label: t("nav.about") },
     { to: "/services", label: t("nav.services") },
     { to: "/solutions", label: t("nav.solutions") },
+    { to: "/secteurs", label: t("nav.sectors") },
     { to: "/projets", label: t("nav.projects") },
     { to: "/blog", label: t("nav.blog") },
     { to: "/contact", label: t("nav.contact") },

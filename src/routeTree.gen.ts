@@ -9,44 +9,45 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SolutionsRouteImport } from './routes/solutions'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ProjetsRouteImport } from './routes/projets'
-import { Route as PolitiqueCookiesRouteImport } from './routes/politique-cookies'
-import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
-import { Route as ParametresCookiesRouteImport } from './routes/parametres-cookies'
-import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as ParametresCookiesRouteImport } from './routes/parametres-cookies'
+import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
+import { Route as PolitiqueCookiesRouteImport } from './routes/politique-cookies'
+import { Route as ProjetsRouteImport } from './routes/projets'
+import { Route as SecteursRouteImport } from './routes/secteurs'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as ApiChatRouteImport } from './routes/api/chat'
 
-const SolutionsRoute = SolutionsRouteImport.update({
-  id: '/solutions',
-  path: '/solutions',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjetsRoute = ProjetsRouteImport.update({
-  id: '/projets',
-  path: '/projets',
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PolitiqueCookiesRoute = PolitiqueCookiesRouteImport.update({
-  id: '/politique-cookies',
-  path: '/politique-cookies',
+const ParametresCookiesRoute = ParametresCookiesRouteImport.update({
+  id: '/parametres-cookies',
+  path: '/parametres-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PolitiqueConfidentialiteRoute =
@@ -55,29 +56,39 @@ const PolitiqueConfidentialiteRoute =
     path: '/politique-confidentialite',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ParametresCookiesRoute = ParametresCookiesRouteImport.update({
-  id: '/parametres-cookies',
-  path: '/parametres-cookies',
+const PolitiqueCookiesRoute = PolitiqueCookiesRouteImport.update({
+  id: '/politique-cookies',
+  path: '/politique-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
-  id: '/mentions-legales',
-  path: '/mentions-legales',
+const ProjetsRoute = ProjetsRouteImport.update({
+  id: '/projets',
+  path: '/projets',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const SecteursRoute = SecteursRouteImport.update({
+  id: '/secteurs',
+  path: '/secteurs',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AProposRoute = AProposRouteImport.update({
-  id: '/a-propos',
-  path: '/a-propos',
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -90,11 +101,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiChatRoute = ApiChatRouteImport.update({
-  id: '/api/chat',
-  path: '/api/chat',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
   '/politique-cookies': typeof PolitiqueCookiesRoute
   '/projets': typeof ProjetsRoute
+  '/secteurs': typeof SecteursRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
   '/politique-cookies': typeof PolitiqueCookiesRoute
   '/projets': typeof ProjetsRoute
+  '/secteurs': typeof SecteursRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
   '/politique-cookies': typeof PolitiqueCookiesRoute
   '/projets': typeof ProjetsRoute
+  '/secteurs': typeof SecteursRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | '/politique-confidentialite'
     | '/politique-cookies'
     | '/projets'
+    | '/secteurs'
     | '/services'
     | '/sitemap.xml'
     | '/solutions'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/politique-confidentialite'
     | '/politique-cookies'
     | '/projets'
+    | '/secteurs'
     | '/services'
     | '/sitemap.xml'
     | '/solutions'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/politique-confidentialite'
     | '/politique-cookies'
     | '/projets'
+    | '/secteurs'
     | '/services'
     | '/sitemap.xml'
     | '/solutions'
@@ -205,6 +217,7 @@ export interface RootRouteChildren {
   PolitiqueConfidentialiteRoute: typeof PolitiqueConfidentialiteRoute
   PolitiqueCookiesRoute: typeof PolitiqueCookiesRoute
   ProjetsRoute: typeof ProjetsRoute
+  SecteursRoute: typeof SecteursRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
@@ -215,67 +228,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/solutions': {
-      id: '/solutions'
-      path: '/solutions'
-      fullPath: '/solutions'
-      preLoaderRoute: typeof SolutionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projets': {
-      id: '/projets'
-      path: '/projets'
-      fullPath: '/projets'
-      preLoaderRoute: typeof ProjetsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politique-cookies': {
-      id: '/politique-cookies'
-      path: '/politique-cookies'
-      fullPath: '/politique-cookies'
-      preLoaderRoute: typeof PolitiqueCookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politique-confidentialite': {
-      id: '/politique-confidentialite'
-      path: '/politique-confidentialite'
-      fullPath: '/politique-confidentialite'
-      preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/parametres-cookies': {
-      id: '/parametres-cookies'
-      path: '/parametres-cookies'
-      fullPath: '/parametres-cookies'
-      preLoaderRoute: typeof ParametresCookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mentions-legales': {
-      id: '/mentions-legales'
-      path: '/mentions-legales'
-      fullPath: '/mentions-legales'
-      preLoaderRoute: typeof MentionsLegalesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/a-propos': {
@@ -285,11 +242,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parametres-cookies': {
+      id: '/parametres-cookies'
+      path: '/parametres-cookies'
+      fullPath: '/parametres-cookies'
+      preLoaderRoute: typeof ParametresCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-confidentialite': {
+      id: '/politique-confidentialite'
+      path: '/politique-confidentialite'
+      fullPath: '/politique-confidentialite'
+      preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-cookies': {
+      id: '/politique-cookies'
+      path: '/politique-cookies'
+      fullPath: '/politique-cookies'
+      preLoaderRoute: typeof PolitiqueCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projets': {
+      id: '/projets'
+      path: '/projets'
+      fullPath: '/projets'
+      preLoaderRoute: typeof ProjetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteurs': {
+      id: '/secteurs'
+      path: '/secteurs'
+      fullPath: '/secteurs'
+      preLoaderRoute: typeof SecteursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -306,13 +333,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/chat': {
-      id: '/api/chat'
-      path: '/api/chat'
-      fullPath: '/api/chat'
-      preLoaderRoute: typeof ApiChatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -325,6 +345,7 @@ const rootRouteChildren: RootRouteChildren = {
   PolitiqueConfidentialiteRoute: PolitiqueConfidentialiteRoute,
   PolitiqueCookiesRoute: PolitiqueCookiesRoute,
   ProjetsRoute: ProjetsRoute,
+  SecteursRoute: SecteursRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,

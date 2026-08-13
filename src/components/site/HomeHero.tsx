@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroVideo from "@/assets/eqnovia-hero-video.mp4";
 import { useLang } from "@/lib/i18n";
 
 const COPY = {
@@ -158,13 +158,13 @@ export function HomeHero() {
       >
         <video
           className="h-full w-full object-cover"
-          src={heroVideo.url}
+          src={heroVideo}
           poster={hero1}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
         />
       </motion.div>
 
