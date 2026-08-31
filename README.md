@@ -1,6 +1,6 @@
 <div align="center">
 
-# ☀️ Eqnovia Sun Spark
+# ☀️ Eqnovia Sun 
 
 ### *Énergie Solaire — Site Web Professionnel*
 
