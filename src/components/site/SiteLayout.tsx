@@ -4,7 +4,6 @@ import { Footer } from "./Footer";
 import { CookieBanner } from "./CookieBanner";
 import { PageLoader } from "./PageLoader";
 import { WhatsAppButton } from "./WhatsAppButton";
-import { ChatWidget } from "./ChatWidget";
 import { Toaster } from "@/components/ui/sonner";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -16,7 +15,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <Footer />
       <CookieBanner />
       <WhatsAppButton />
-      <ChatWidget />
       <Toaster position="top-center" />
     </>
   );

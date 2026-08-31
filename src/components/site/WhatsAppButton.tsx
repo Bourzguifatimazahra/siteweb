@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useLang } from "@/lib/i18n";
 
-const WA_NUMBER = "212655563404";
+const WA_NUMBER = "212664549777";
 
 export function WhatsAppButton() {
   const { t } = useLang();
@@ -16,7 +16,7 @@ export function WhatsAppButton() {
       transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 left-6 z-40 h-14 w-14 rounded-full bg-[#25D366] shadow-lg grid place-items-center text-white"
+      className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-[#25D366] shadow-lg grid place-items-center text-white"
     >
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
       <svg viewBox="0 0 24 24" className="relative h-7 w-7 fill-current" aria-hidden>
