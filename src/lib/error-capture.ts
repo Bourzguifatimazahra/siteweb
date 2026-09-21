@@ -4,7 +4,23 @@
 let lastCapturedError: { error: unknown; at: number } | undefined;
 const TTL_MS = 5_000;
 
+const ABORT_MESSAGE_RE = /(^|\b)(aborted|socket hang up|premature close)(\b|$)/i;
+
+// Client disconnects (ECONNRESET / "aborted") surface as thrown errors in dev
+// but are not app bugs — never record them, so they can't mask a real error.
+export function isClientAbortError(error: unknown): boolean {
+  let current: unknown = error;
+  for (let depth = 0; depth < 5 && current && typeof current === "object"; depth++) {
+    const err = current as { message?: unknown; code?: unknown; cause?: unknown };
+    if (err.code === "ECONNRESET" || err.code === "ERR_STREAM_PREMATURE_CLOSE") return true;
+    if (typeof err.message === "string" && ABORT_MESSAGE_RE.test(err.message)) return true;
+    current = err.cause;
+  }
+  return false;
+}
+
 function record(error: unknown) {
+  if (isClientAbortError(error)) return;
   lastCapturedError = { error, at: Date.now() };
 }
 
